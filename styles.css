@@ -1,0 +1,860 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+#app {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 10px; /* 10px */
+}
+
+/* Header */
+header {
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 10px; /* 10px */
+    margin-bottom: 20px; /* 20px */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+header h1 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.draft-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.draft-info span {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 25px;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.turn-indicator {
+    margin-top: 15px;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.turn-indicator.my-turn {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+}
+
+.turn-indicator.other-turn {
+    background: linear-gradient(135deg, #ffc107, #fd7e14);
+    color: #2c3e50;
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+}
+
+/* Search */
+.search-container {
+    margin: 8px 0 12px; /* 8px 0 12px */
+}
+
+#global-search {
+    width: 100%;
+    padding: 15px 20px; /* 15px 20px */
+    border: 1px solid rgba(102, 126, 234, 0.25);
+    border-radius: 25px;
+    font-size: 1.1rem;
+    background: linear-gradient(180deg, #f9fbff 0%, #eef2ff 100%);
+    backdrop-filter: blur(10px);
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.08), 0 6px 24px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.15s ease, border-color 0.15s ease; /* no movement */
+}
+
+#global-search:focus {
+    outline: none;
+    border-color: rgba(102, 126, 234, 0.4);
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.12), 0 0 0 2px rgba(102, 126, 234, 0.25);
+    transform: none; /* eliminate bounce */
+}
+
+.empty-list {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+    border-radius: 8px;
+    padding: 5px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Main content grid shell */
+main.grid-shell {
+    display: grid;
+    grid-template-columns: 1fr repeat(6, 1fr) 1fr; /* L + 6 center + R */
+    grid-auto-rows: minmax(10px, auto);
+    grid-template-areas:
+        "left siteheader siteheader siteheader siteheader siteheader siteheader right"
+        "left search     search     search     search     search     search     right"
+        "left center     center     center     center     center     center     right"
+        "left center     center     center     center     center     center     right"
+        "left center     center     center     center     center     center     right"
+        "left center     center     center     center     center     center     right";
+    gap: 20px; /* 20px */
+    margin-bottom: 20px; /* 20px */
+}
+
+/* Place items into grid areas */
+.left-gutter { grid-area: left; }
+.site-header { grid-area: siteheader; }
+.search-container { grid-area: search; }
+.center-content { grid-area: center; }
+.right-gutter { grid-area: right; }
+
+/* Make center content stack selections over draft board */
+.center-content {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 20px; /* 20px */
+    padding-left: 0;
+    padding-right: 0;
+    min-width: 0; /* prevent overflow into gutters */
+}
+
+/* Position columns */
+.position-columns {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr)); /* allow shrink, no overflow */
+    gap: 12px; /* 12px */
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    min-width: 0; /* ensure container can shrink inside grid area */
+}
+
+.position-column {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 8px; /* 8px */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    min-width: 0; /* allow content to shrink */
+}
+
+/* Section headings */
+.position-column h3 {
+    color: #2c3e50;
+    margin-bottom: 15px; /* 15px */
+    text-align: center;
+    font-size: 1.05rem;
+    font-weight: 600;
+    padding-bottom: 10px; /* 10px */
+    border-bottom: 2px solid #e9ecef;
+}
+
+.draft-board h3 {
+    color: #2c3e50;
+    margin-bottom: 15px; /* 15px */
+    text-align: center;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.my-team h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.right-gutter h3,
+.other-teams h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.player-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px; /* 6px */
+}
+
+.player-card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 8px; /* 8px */
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-left-color 0.15s ease; /* no transform transition */
+    border-left: 4px solid transparent;
+}
+
+/* Hover effect on player cards - no movement */
+.player-card:hover {
+    background: #e9ecef;
+    transform: none;
+    border-left-color: #667eea;
+}
+
+.player-card.drafted {
+    background: #d4edda;
+    border-left-color: #28a745;
+    opacity: 0.7;
+}
+
+.player-card.my-team {
+    background: #d1ecf1;
+    border-left-color: #17a2b8;
+    font-weight: 600;
+}
+
+.player-card.clickable {
+    background: #e8f5e8;
+    border-left-color: #28a745;
+    cursor: pointer;
+}
+
+.player-card.clickable:hover {
+    background: #d4edda;
+    transform: none;
+    border-left-color: #20c997;
+}
+
+/* Remove gray-out for non-clickable cards */
+.player-card:not(.drafted) {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.player-card.top-pick {
+    background: linear-gradient(135deg, #ffd700, #ffed4e) !important;
+    border-left-color: #ffc107 !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4) !important;
+    transform: none !important;
+    border: 3px solid #ffc107 !important;
+}
+
+.player-card.second-pick {
+    background: linear-gradient(135deg, #c0c0c0, #e9ecef);
+    border-left-color: #6c757d;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(108, 117, 125, 0.4);
+}
+
+.player-card.third-pick {
+    background: linear-gradient(135deg, #cd7f32, #d4a574);
+    border-left-color: #a0522d;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(160, 82, 45, 0.4);
+}
+
+.player-card.fourth-pick {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    border-left-color: #1e7e34;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+}
+
+.player-card.fifth-pick {
+    background: linear-gradient(135deg, #17a2b8, #6f42c1);
+    border-left-color: #138496;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(23, 162, 184, 0.4);
+}
+
+.pick-label {
+    position: absolute;
+    top: -8px; /* -8px */
+    right: -8px; /* -8px */
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px; /* 4px 8px */
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.player-card {
+    position: relative;
+}
+
+/* Player card typography tweaks */
+.player-name {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 3px; /* 3px */
+    font-size: 0.95rem;
+}
+
+.player-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+.player-ev {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 2px 8px; /* 2px 8px */
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* Draft board */
+.draft-board {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px; /* 20px */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+#draft-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px; /* 10px */
+}
+
+.draft-pick {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px; /* 15px */
+    text-align: center;
+    border: 2px solid #e9ecef;
+    transition: background-color 0.15s ease, border-color 0.15s ease; /* no transform transition */
+}
+
+.draft-pick.filled {
+    background: #d4edda;
+    border-color: #28a745;
+}
+
+.draft-pick.my-team {
+    background: #d1ecf1;
+    border-color: #17a2b8;
+    font-weight: 600;
+}
+
+.pick-number {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 5px; /* 5px */
+}
+
+.pick-player {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 3px; /* 3px */
+}
+
+.pick-team {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+/* My team */
+.my-team {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 12px; /* 12px */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+#my-roster {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* 10px */
+}
+
+.roster-position {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px; /* 15px */
+}
+
+.roster-position h4 {
+    color: #2c3e50;
+    margin-bottom: 10px; /* 10px */
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.roster-players {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* 5px */
+}
+
+.roster-player {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px; /* 8px */
+    background: white;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+/* Draft controls */
+.draft-controls {
+    display: flex;
+    gap: 15px; /* 15px */
+    justify-content: center;
+}
+
+.draft-controls button {
+    padding: 12px 24px; /* 12px 24px */
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#undo-btn {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    color: white;
+}
+
+#undo-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+#undo-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#reset-btn {
+    background: linear-gradient(135deg, #feca57, #ff9ff3);
+    color: #2c3e50;
+}
+
+#reset-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(254, 202, 87, 0.4);
+}
+
+#simulate-pick-btn {
+    background: linear-gradient(135deg, #6f42c1, #e83e8c);
+    color: white;
+}
+
+#simulate-pick-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(111, 66, 193, 0.4);
+}
+
+/* Legacy #settings-btn styles removed; header gear overrides handle appearance */
+
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    margin: 5% auto;
+    padding: 0;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 20px; /* 20px */
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.close {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close:hover {
+    opacity: 0.7;
+}
+
+.modal-body {
+    padding: 20px; /* 20px */
+}
+
+.setting-group {
+    margin-bottom: 20px; /* 20px */
+}
+
+.setting-group label {
+    display: block;
+    margin-bottom: 8px; /* 8px */
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.setting-group select,
+.setting-group input[type="checkbox"] {
+    width: 100%;
+    padding: 10px; /* 10px */
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: white;
+    transition: border-color 0.3s ease;
+}
+
+.setting-group select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.setting-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+.setting-group button {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.setting-group button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .position-columns {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    main.grid-shell {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "siteheader"
+            "search"
+            "left"
+            "right"
+            "center";
+    }
+}
+
+@media (max-width: 768px) {
+    .position-columns {
+        grid-template-columns: 1fr;
+    }
+    
+    .draft-info {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    #app {
+        padding: 10px; /* 10px */
+    }
+}
+
+/* Removed unused keyframes fadeIn and fadeInSoft */
+
+/* Disable render animations in player columns */
+.position-columns .player-card,
+.position-columns .draft-pick {
+    animation: none;
+}
+
+/* Keep gutters animation-free */
+.my-team .roster-position,
+.right-gutter .roster-position,
+.other-teams .roster-position,
+.my-team .roster-player,
+.right-gutter .roster-player,
+.other-teams .roster-player {
+    animation: none;
+}
+
+/* Remove global animation rule if present */
+/* .player-card, .draft-pick, .roster-position { animation: fadeIn 0.3s ease-out; } */
+
+/* Highlight current pick - no scale */
+.draft-pick.current {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    transform: none;
+    box-shadow: 0 6px 18px rgba(102, 126, 234, 0.35);
+}
+
+.draft-pick.current .pick-number,
+.draft-pick.current .pick-player,
+.draft-pick.current .pick-team {
+    color: white;
+}
+
+/* Right gutter container styling */
+.right-gutter,
+.other-teams {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Make gutters scroll independently if content is tall */
+.left-gutter,
+.right-gutter {
+    max-height: 100%;
+    overflow: auto;
+}
+
+/* Keep gutters above center if shadows overlap visually */
+.left-gutter,
+.right-gutter {
+    position: relative;
+    z-index: 1;
+}
+
+/* Typography tweaks v2 - smaller headings and card text */
+.position-column h3 { font-size: 0.95rem; }
+.draft-board h3 { font-size: 1.05rem; }
+.my-team h3 { font-size: 1.05rem; }
+.right-gutter h3, .other-teams h3 { font-size: 1.05rem; }
+
+.player-name { font-size: 0.90rem; }
+.player-details { font-size: 0.80rem; }
+.player-ev { font-size: 0.70rem; }
+.player-status { font-size: 0.65rem; }
+
+/* Ensure highlighted cards do not scale fonts larger */
+.player-card.top-pick,
+.player-card.second-pick,
+.player-card.third-pick,
+.player-card.fourth-pick,
+.player-card.fifth-pick {
+    transform: none !important;
+}
+
+/* Highlighted top players hover - no movement */
+.player-card.top-pick:hover,
+.player-card.second-pick:hover,
+.player-card.third-pick:hover,
+.player-card.fourth-pick:hover,
+.player-card.fifth-pick:hover {
+    transform: none !important;
+    filter: none;
+}
+
+/* My Team and Other Teams: reduce heading and item sizes */
+.my-team h3,
+.right-gutter h3,
+.other-teams h3 {
+    font-size: 1rem;
+}
+
+.roster-position {
+    padding: 12px;
+}
+
+.roster-position h4 {
+    font-size: 0.95rem;
+}
+
+.my-team .roster-player,
+.right-gutter .roster-player,
+.other-teams .roster-player {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+/* Shrink top-pick overlays on cards */
+.pick-label {
+    top: -6px;
+    right: -6px;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 0.6rem;
+}
+
+/* Gutters: reduce left/right padding */
+.my-team { padding-left: 6px; padding-right: 6px; } /* 6px */
+.right-gutter, .other-teams { padding-left: 6px; padding-right: 6px; } /* 6px */
+
+/* Roster sections inside gutters: tighten left/right padding */
+.roster-position { padding-left: 8px; padding-right: 8px; } /* 8px */
+.roster-player { padding-left: 4px; padding-right: 4px; } /* 4px */
+
+/* Other Teams / collapsed list interactions */
+.team-item { cursor: pointer; }
+/* Stronger current-team highlight in collapsed list */
+.team-item.current {
+    font-weight: 600;
+    background: var(--soft-bg-translucent);
+    border-radius: 6px;
+}
+.team-item button.edit-team { cursor: pointer; }
+
+:root {
+    --soft-bg: #f8f9ff; /* even lighter indigo-tinted panel */
+    --soft-bg-strong: #f3f6ff; /* lighter strong variant */
+    --soft-bg-translucent: rgba(102, 126, 234, 0.08); /* lighter list highlight */
+}
+
+/* Replace white panel backgrounds with themed soft background */
+header,
+.position-column,
+.draft-board,
+.my-team,
+.right-gutter,
+.other-teams,
+.modal-content,
+#global-search {
+    background: var(--soft-bg);
+}
+
+/* Replace white/near-white card/row backgrounds */
+.player-card,
+.roster-position,
+.roster-player,
+.draft-pick {
+    background: var(--soft-bg);
+}
+
+/* Roster list spacing in gutters - tighter vertical spacing */
+#my-roster { gap: 6px; } /* 6px */
+.right-gutter .roster-players, .other-teams .roster-players { gap: 4px; } /* 4px */
+
+.my-team .roster-player,
+.right-gutter .roster-player,
+.other-teams .roster-player {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+/* Settings gear in header */
+.site-header {
+    position: relative;
+}
+
+.settings-gear {
+    position: absolute;
+    top: 10px; /* 10px */
+    right: 12px; /* 12px */
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    line-height: 1;
+    color: #6c757d; /* plain gray */
+    padding: 0; /* no padding box */
+    border-radius: 0; /* no rounded background */
+    box-shadow: none; /* ensure no shadow */
+    transition: none; /* no animation */
+}
+
+.settings-gear:hover {
+    background: transparent; /* no hover background */
+    color: #6c757d; /* keep same gray */
+}
+
+/* Force plain gear: override any legacy #settings-btn styles */
+.site-header #settings-btn,
+.settings-gear {
+    background: transparent !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: #6c757d !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    transition: none !important;
+    transform: none !important;
+}
+
+.site-header #settings-btn:hover,
+.settings-gear:hover {
+    background: transparent !important;
+    box-shadow: none !important;
+    color: #6c757d !important;
+    transform: none !important;
+}
+
+/* Settings gear icon image */
+.settings-gear img {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+    filter: grayscale(100%); /* plain gray look */
+}

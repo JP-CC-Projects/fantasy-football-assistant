@@ -1,0 +1,7 @@
+# Ignore Cursor spec file
+cursor.md
+
+# Ignore all CSV data files
+*.csv
+
+*.py

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Draft Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Main Content: gutters + header + search + center -->
+        <main class="grid-shell">
+            <!-- Left Gutter: My Team -->
+            <aside class="left-gutter my-team">
+                <h3>My Team</h3>
+                <div id="my-roster"></div>
+            </aside>
+
+            <!-- Header between gutters -->
+            <header class="site-header">
+                <button id="settings-btn" class="settings-gear" title="Settings" aria-label="Settings">
+                    <img src="./images/gear_icon_64.png" alt="Settings">
+                </button>
+                <h1>Fantasy Draft Assistant</h1>
+                <div class="draft-info">
+                    <span id="current-team">Team: <strong id="team-name">Me</strong></span>
+                    <span id="draft-round">Round: <strong id="round-number">1</strong></span>
+                    <span id="pick-number">Pick: <strong id="pick-in-round">1</strong></span>
+                </div>
+                <div class="turn-indicator" id="turn-indicator">
+                    <span id="turn-text">Your turn!</span>
+                </div>
+            </header>
+
+            <!-- Global Search between gutters -->
+            <div class="search-container">
+                <input type="text" id="global-search" placeholder="Search all players..." autocomplete="off">
+            </div>
+
+            <!-- Center content: selections + draft board -->
+            <section class="center-content">
+                <!-- Top Players by Position -->
+                <div class="position-columns">
+                    <div class="position-column">
+                        <h3>QB</h3>
+                        <div id="qb-list" class="player-list"></div>
+                    </div>
+                    <div class="position-column">
+                        <h3>RB</h3>
+                        <div id="rb-list" class="player-list"></div>
+                    </div>
+                    <div class="position-column">
+                        <h3>WR</h3>
+                        <div id="wr-list" class="player-list"></div>
+                    </div>
+                    <div class="position-column">
+                        <h3>TE</h3>
+                        <div id="te-list" class="player-list"></div>
+                    </div>
+                    <div class="position-column">
+                        <h3>K</h3>
+                        <div id="k-list" class="player-list"></div>
+                    </div>
+                    <div class="position-column">
+                        <h3>D/ST</h3>
+                        <div id="dst-list" class="player-list"></div>
+                    </div>
+                </div>
+
+                <!-- Draft Board -->
+                <div class="draft-board">
+                    <h3>Draft Board</h3>
+                    <div id="draft-grid"></div>
+                </div>
+            </section>
+
+            <!-- Right Gutter: Other Teams -->
+            <aside class="right-gutter other-teams">
+                <h3>Other Teams</h3>
+                <div id="other-teams-grid"></div>
+            </aside>
+        </main>
+
+        <!-- Draft Controls -->
+        <div class="draft-controls">
+            <button id="undo-btn" disabled>Undo Last Pick</button>
+            <button id="reset-btn">Reset Draft</button>
+            <button id="simulate-pick-btn">Simulate Other Team Pick</button>
+        </div>
+
+        <!-- Settings Modal -->
+        <div id="settings-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Draft Settings</h3>
+                    <span class="close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="setting-group">
+                        <label for="league-size">League Size:</label>
+                        <select id="league-size">
+                            <option value="8">8 Teams</option>
+                            <option value="10">10 Teams</option>
+                            <option value="12">12 Teams</option>
+                            <option value="14">14 Teams</option>
+                            <option value="16">16 Teams</option>
+                        </select>
+                    </div>
+                    <div class="setting-group">
+                        <label for="draft-position">Your Draft Position:</label>
+                        <select id="draft-position">
+                            <option value="1">1st Pick</option>
+                            <option value="2">2nd Pick</option>
+                            <option value="3">3rd Pick</option>
+                            <option value="4">4th Pick</option>
+                            <option value="5">5th Pick</option>
+                            <option value="6">6th Pick</option>
+                            <option value="7">7th Pick</option>
+                            <option value="8">8th Pick</option>
+                        </select>
+                    </div>
+                    <div class="setting-group">
+                        <label for="snake-draft">
+                            <input type="checkbox" id="snake-draft" checked>
+                            Snake Draft (reverses order each round)
+                        </label>
+                    </div>
+                    <div class="setting-group">
+                        <button id="save-settings">Save Settings</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    <script src="player-data.js"></script>
+    <script src="algorithms.v2.js"></script>
+    <script src="ui.js"></script>
+    <script src="other-teams.js"></script>
+</body>
+</html>
+
+
+  
