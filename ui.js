@@ -65,7 +65,8 @@ class FantasyDraftApp {
     loadUI() {
         const defaultUI = {
             search: "",
-            roleTopLimit: 10
+            roleTopLimit: 10,
+            sortMode: "EV" // EV | ADP
         };
         
         const saved = localStorage.getItem('fdraft/ui');
@@ -171,6 +172,19 @@ class FantasyDraftApp {
         if (leagueSizeSelect) {
             leagueSizeSelect.addEventListener('change', () => this.updateDraftPositionOptions());
         }
+
+        // Sort toggle
+        const sortToggle = document.getElementById('sort-toggle');
+        if (sortToggle) {
+            // Initialize visual state
+            if (this.ui.sortMode === 'ADP') sortToggle.classList.add('adp');
+            sortToggle.addEventListener('click', () => {
+                this.ui.sortMode = this.ui.sortMode === 'EV' ? 'ADP' : 'EV';
+                this.saveUI();
+                if (this.ui.sortMode === 'ADP') sortToggle.classList.add('adp'); else sortToggle.classList.remove('adp');
+                this.renderPositionColumns();
+            });
+        }
     }
 
     // Rendering
@@ -258,9 +272,20 @@ class FantasyDraftApp {
 
     // Helper Methods
     getAvailablePlayersByPosition(position) {
-        return this.playersState.players
-            .filter(p => p.position === position && p.takenBy === null)
-            .sort((a, b) => b.EV - a.EV);
+        const base = this.playersState.players
+            .filter(p => p.position === position && p.takenBy === null);
+        if (this.ui.sortMode === 'ADP') {
+            // Smaller ADP is better; if missing ADP, push to end
+            return base.sort((a, b) => {
+                const aHas = typeof a.ADP === 'number';
+                const bHas = typeof b.ADP === 'number';
+                if (aHas && bHas) return a.ADP - b.ADP;
+                if (aHas) return -1;
+                if (bHas) return 1;
+                return b.EV - a.EV;
+            });
+        }
+        return base.sort((a, b) => b.EV - a.EV);
     }
 
     filterPlayersBySearch(players) {

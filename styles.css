@@ -248,12 +248,12 @@ main.grid-shell {
 }
 
 .player-card.top-pick {
-    background: linear-gradient(135deg, #ffd700, #ffed4e) !important;
-    border-left-color: #ffc107 !important;
-    font-weight: 700 !important;
-    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4) !important;
-    transform: none !important;
-    border: 3px solid #ffc107 !important;
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    border-left-color: #ffc107;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+    transform: none;
+    border: 3px solid #ffc107;
 }
 
 .player-card.second-pick {
@@ -392,7 +392,6 @@ main.grid-shell {
 #my-roster {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* 10px */
 }
 
 .roster-position {
@@ -809,45 +808,45 @@ header,
 
 .settings-gear {
     position: absolute;
-    top: 10px; /* 10px */
-    right: 12px; /* 12px */
+    top: 10px;
+    right: 12px;
     background: transparent;
     border: none;
     font-size: 1.2rem;
     cursor: pointer;
     line-height: 1;
-    color: #6c757d; /* plain gray */
-    padding: 0; /* no padding box */
-    border-radius: 0; /* no rounded background */
-    box-shadow: none; /* ensure no shadow */
-    transition: none; /* no animation */
+    color: #6c757d;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    transition: none;
 }
 
 .settings-gear:hover {
-    background: transparent; /* no hover background */
-    color: #6c757d; /* keep same gray */
+    background: transparent;
+    color: #6c757d;
 }
 
 /* Force plain gear: override any legacy #settings-btn styles */
 .site-header #settings-btn,
 .settings-gear {
-    background: transparent !important;
-    background-image: none !important;
-    border: none !important;
-    box-shadow: none !important;
-    color: #6c757d !important;
-    padding: 0 !important;
-    border-radius: 0 !important;
-    transition: none !important;
-    transform: none !important;
+    background: transparent;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+    color: #6c757d;
+    padding: 0;
+    border-radius: 0;
+    transition: none;
+    transform: none;
 }
 
 .site-header #settings-btn:hover,
 .settings-gear:hover {
-    background: transparent !important;
-    box-shadow: none !important;
-    color: #6c757d !important;
-    transform: none !important;
+    background: transparent;
+    box-shadow: none;
+    color: #6c757d;
+    transform: none;
 }
 
 /* Settings gear icon image */
@@ -858,3 +857,102 @@ header,
     object-fit: contain;
     filter: grayscale(100%); /* plain gray look */
 }
+
+/* Header icon buttons (gear + undo) */
+.site-header { position: relative; }
+.icon-btn, .settings-gear {
+    position: absolute;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0;
+    cursor: pointer;
+    line-height: 1;
+    box-shadow: none !important;
+    transition: none !important;
+}
+
+/* Gear stays at the far right */
+.settings-gear { top: 10px; right: 12px; color: #6c757d; }
+.settings-gear img { display: block; width: 40px; height: 40px; object-fit: contain; filter: grayscale(100%); }
+
+/* Undo sits just to the left of gear */
+.header-undo { top: 10px; right: 60px; }
+.header-undo img { display: block; width: 40px; height: 40px; object-fit: contain; filter: grayscale(100%); }
+
+/* Header left text buttons */
+/* Position header buttons (left side) */
+.header-reset { position: absolute; top: 10px; left: 12px; }
+.header-sim { position: absolute; top: 62px; left: 12px; }
+
+/* Restore pill styling for Reset/Sim in header */
+.site-header #reset-btn,
+.site-header #simulate-pick-btn {
+    padding: 8px 20px; /* reduced top/bottom padding */
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100px; /* equal pill width for both */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Header actions: remove hover animations (no bounce) */
+.site-header #undo-btn,
+.site-header #reset-btn,
+.site-header #simulate-pick-btn {
+    transition: none;
+}
+
+.site-header #undo-btn:hover,
+.site-header #reset-btn:hover,
+.site-header #simulate-pick-btn:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Sort toggle slider (EV/ADP) */
+.sort-toggle {
+    position: absolute;
+    top: 64px;
+    right: 12px;
+    width: 110px;
+    height: 34px;
+    border-radius: 17px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.35));
+    border: 1px solid rgba(102, 126, 234, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.06), 0 6px 24px rgba(0,0,0,0.06);
+    backdrop-filter: blur(6px);
+    cursor: pointer;
+    user-select: none;
+}
+.sort-toggle .label { flex: 1; text-align: center; font-size: 0.8rem; color: #6c757d; font-weight: 600; letter-spacing: 0.2px; }
+.sort-toggle:not(.adp) .label.ev { color: #2c3e50; }
+.sort-toggle.adp .label.adp { color: #2c3e50; }
+.sort-toggle .knob {
+    position: absolute;
+    top: 4px;
+    left: 4px; /* EV default */
+    width: 52px;
+    height: 26px;
+    border-radius: 13px;
+    background: linear-gradient(180deg, #fdfdff, #e9eefb);
+    border: 1px solid rgba(102, 126, 234, 0.25);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 0 0 2px rgba(102,126,234,0.10);
+    transition: left 0.2s ease; /* subtle slide only */
+}
+.sort-toggle.adp .knob { left: 54px; }
+
+/* Edit pencil icon in Other Teams */
+.edit-team img { width: 18px; height: 18px; display: inline-block; object-fit: contain; filter: grayscale(100%); }
+.edit-team { background: transparent; border: none; padding: 0 4px; cursor: pointer; }

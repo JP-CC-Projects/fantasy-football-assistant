@@ -14,7 +14,7 @@
     const FLEX_ELIGIBLE = new Set(["RB", "WR", "TE"]);
   
     // Streaming depth bump (pushes replacement deeper -> lowers VOR early)
-    const STREAM_FUDGE = { QB: 2, RB: 0, WR: 0, TE: 1, DST: 6, K: 8 };
+    const STREAM_FUDGE = { QB: -2, RB: 0, WR: 0, TE: 1, DST: 6, K: 8 };
   
     // ---- Utilities ----
     const clamp = (x, lo, hi) => Math.max(lo, Math.min(hi, x));
@@ -40,6 +40,13 @@
     function canDraftPos(rs, pos) {
       const mx = MAX_POS[pos];
       if (isNum(mx) && rs.have[pos] >= mx) return false;
+      // Soft rule: do not take a 3rd QB until RB2, WR2, and FLEX are filled
+      if (pos === 'QB' && (rs.have.QB || 0) >= 2) {
+        const needRB2 = (rs.startersFilled.RB || 0) < (STARTERS.RB || 0);
+        const needWR2 = (rs.startersFilled.WR || 0) < (STARTERS.WR || 0);
+        const needFLEX = (rs.haveFlex || 0) < (STARTERS.FLEX || 0);
+        if (needRB2 || needWR2 || needFLEX) return false;
+      }
       // If only bench remains and bench is full, block:
       const starterOpen = rs.startersFilled[pos] < (STARTERS[pos] || 0);
       const flexOpen = FLEX_ELIGIBLE.has(pos) && rs.haveFlex < STARTERS.FLEX;
@@ -323,6 +330,8 @@
      * @returns {{top:Array, replacement:Object}}
      */
     function suggestPick(players, rs, nTeams, roundNumber, pickInRound, opts = {}) {
+      // Normalize roster snapshot to protect against missing or stale fields
+      rs = normalizeRosterState(rs);
       const {
         kDstGatingRound = 10,
         kDstGateAtNextPick = true,
@@ -448,6 +457,26 @@
       const top = scored.slice(0,5);
   
       return { top, replacement: rep };
+    }
+
+    // ---- Roster normalization ----
+    function normalizeRosterState(rs) {
+      const r = JSON.parse(JSON.stringify(rs || makeEmptyRosterState()));
+      const S = STARTERS;
+      for (const p of ["QB","RB","WR","TE","DST","K"]) {
+        r.have[p] = r.have[p] || 0;
+        r.startersFilled[p] = Math.min(r.startersFilled?.[p] || 0, S[p] || 0);
+      }
+      const allZero = Object.values(r.startersFilled).every(x => x === 0);
+      if (allZero) {
+        for (const p of ["QB","RB","WR","TE","DST","K"]) {
+          r.startersFilled[p] = Math.min(r.have[p], S[p] || 0);
+        }
+      }
+      const baseSkill = (S.RB||0) + (S.WR||0) + (S.TE||0);
+      const haveSkill = (r.have.RB||0) + (r.have.WR||0) + (r.have.TE||0);
+      r.haveFlex = Math.min(S.FLEX || 0, Math.max(0, haveSkill - baseSkill));
+      return r;
     }
   
     // ---- Public API ----

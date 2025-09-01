@@ -40,7 +40,6 @@
             const idx = Math.max(0, (parseInt(teamId?.slice(1), 10) || 1) - 1);
             const fromSettings = Array.isArray(this.app.settings.teamNames) ? this.app.settings.teamNames[idx] : null;
             if (fromSettings && String(fromSettings).trim().length > 0) return String(fromSettings).trim();
-            // Fallbacks
             if (typeof this.app.getDisplayTeamName === 'function') {
                 return this.app.getDisplayTeamName(teamId);
             }
@@ -60,7 +59,6 @@
                     localStorage.setItem('fdraft/settings', JSON.stringify(this.app.settings));
                 } catch (_) {}
             }
-            // Re-render main header text if needed
             if (typeof this.app.updateDraftInfo === 'function') {
                 this.app.updateDraftInfo();
             }
@@ -81,7 +79,7 @@
 
         renderExpanded(teamId, els) {
             const name = this.getTeamName(teamId);
-            els.header.innerHTML = `${name} <button class="edit-team" title="Edit name" aria-label="Edit team name">✎</button>`;
+            els.header.innerHTML = `${name} <button class="edit-team" title="Edit name" aria-label="Edit team name"><img src="images/pencil_icon_48.png" alt="Edit"></button>`;
             els.header.style.cursor = 'pointer';
             els.header.onclick = () => {
                 this.state.collapsed = true;
@@ -145,7 +143,7 @@
                 return `
                     <div class="roster-player team-item${currentClass}" data-team="${teamId}">
                         <span>${name}</span>
-                        <button class="edit-team" title="Edit name" aria-label="Edit team name" data-edit="${teamId}">✎</button>
+                        <button class="edit-team" title="Edit name" aria-label="Edit team name" data-edit="${teamId}"><img src="images/pencil_icon_48.png" alt="Edit"></button>
                     </div>`;
             }).join('');
 

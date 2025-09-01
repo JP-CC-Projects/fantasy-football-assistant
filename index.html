@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fantasy Draft Assistant</title>
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -18,9 +19,19 @@
 
             <!-- Header between gutters -->
             <header class="site-header">
-                <button id="settings-btn" class="settings-gear" title="Settings" aria-label="Settings">
-                    <img src="./images/gear_icon_64.png" alt="Settings">
+                <button id="reset-btn" class="text-btn header-reset" title="Reset draft" aria-label="Reset">Reset</button>
+                <button id="simulate-pick-btn" class="text-btn header-sim" title="Simulate other team pick" aria-label="Sim">Sim</button>
+                <button id="undo-btn" class="icon-btn header-undo" title="Undo" aria-label="Undo" disabled>
+                    <img src="images/undo_icon_48.png" alt="Undo">
                 </button>
+                <button id="settings-btn" class="settings-gear" title="Settings" aria-label="Settings">
+                    <img src="images/gear_icon_48.png" alt="Settings">
+                </button>
+                <div id="sort-toggle" class="sort-toggle" title="Toggle sort EV/ADP" aria-label="Sort toggle">
+                    <span class="label ev">EV</span>
+                    <span class="label adp">ADP</span>
+                    <div class="knob"></div>
+                </div>
                 <h1>Fantasy Draft Assistant</h1>
                 <div class="draft-info">
                     <span id="current-team">Team: <strong id="team-name">Me</strong></span>
@@ -83,9 +94,7 @@
 
         <!-- Draft Controls -->
         <div class="draft-controls">
-            <button id="undo-btn" disabled>Undo Last Pick</button>
-            <button id="reset-btn">Reset Draft</button>
-            <button id="simulate-pick-btn">Simulate Other Team Pick</button>
+            
         </div>
 
         <!-- Settings Modal -->
@@ -117,6 +126,8 @@
                             <option value="6">6th Pick</option>
                             <option value="7">7th Pick</option>
                             <option value="8">8th Pick</option>
+                            <option value="9">9th Pick</option>
+                            <option value="10">10th Pick</option>
                         </select>
                     </div>
                     <div class="setting-group">
