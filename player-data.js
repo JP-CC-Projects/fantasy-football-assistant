@@ -5,7 +5,7 @@ window.PlayerData = [
         "team": "Buffalo Bills",
         "position": "QB",
         "EV": 376.2,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 22.73
     },
     {
@@ -14,7 +14,7 @@ window.PlayerData = [
         "team": "Baltimore Ravens",
         "position": "QB",
         "EV": 373.0,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 23.95
     },
     {
@@ -23,7 +23,7 @@ window.PlayerData = [
         "team": "Philadelphia Eagles",
         "position": "QB",
         "EV": 358.6,
-        "risk": null,
+        "risk": 0.865,
         "ADP": 38.79
     },
     {
@@ -32,7 +32,7 @@ window.PlayerData = [
         "team": "Washington Commanders (Rookie QB)",
         "position": "QB",
         "EV": 355.9,
-        "risk": null,
+        "risk": 0.088,
         "ADP": 32.44
     },
     {
@@ -41,7 +41,7 @@ window.PlayerData = [
         "team": "Cincinnati Bengals",
         "position": "QB",
         "EV": 342.2,
-        "risk": null,
+        "risk": 0.065,
         "ADP": 35.93
     },
     {
@@ -50,7 +50,7 @@ window.PlayerData = [
         "team": "Kansas City Chiefs",
         "position": "QB",
         "EV": 327.8,
-        "risk": null,
+        "risk": 0.094,
         "ADP": 54.51
     },
     {
@@ -59,7 +59,7 @@ window.PlayerData = [
         "team": "TBD (Free Agent)",
         "position": "QB",
         "EV": 318.5,
-        "risk": null,
+        "risk": 0.047,
         "ADP": 68.46
     },
     {
@@ -68,7 +68,7 @@ window.PlayerData = [
         "team": "Arizona Cardinals",
         "position": "QB",
         "EV": 316.2,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 93.11
     },
     {
@@ -77,7 +77,7 @@ window.PlayerData = [
         "team": "San Francisco 49ers",
         "position": "QB",
         "EV": 311.6,
-        "risk": null,
+        "risk": 0.708,
         "ADP": 106.33
     },
     {
@@ -86,7 +86,7 @@ window.PlayerData = [
         "team": "Active Roster Spot TBD (Drafted by TBD)",
         "position": "QB",
         "EV": 308.8,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 74.03
     },
     {
@@ -95,7 +95,7 @@ window.PlayerData = [
         "team": "Chicago Bears",
         "position": "QB",
         "EV": 299.8,
-        "risk": null,
+        "risk": 0.467,
         "ADP": 118.39
     },
     {
@@ -104,7 +104,7 @@ window.PlayerData = [
         "team": "Dallas Cowboys",
         "position": "QB",
         "EV": 291.6,
-        "risk": null,
+        "risk": 0.641,
         "ADP": 100.3
     },
     {
@@ -113,7 +113,7 @@ window.PlayerData = [
         "team": "Los Angeles Chargers",
         "position": "QB",
         "EV": 291.4,
-        "risk": null,
+        "risk": 0.182,
         "ADP": 116.36
     },
     {
@@ -131,7 +131,7 @@ window.PlayerData = [
         "team": "Detroit Lions",
         "position": "QB",
         "EV": 286.5,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 104.56
     },
     {
@@ -140,7 +140,7 @@ window.PlayerData = [
         "team": "Houston Texans",
         "position": "QB",
         "EV": 280.4,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 134.3
     },
     {
@@ -149,7 +149,7 @@ window.PlayerData = [
         "team": "Carolina Panthers (Rookie QB)",
         "position": "QB",
         "EV": 278.2,
-        "risk": null,
+        "risk": 0.31,
         "ADP": 128.22
     },
     {
@@ -158,7 +158,7 @@ window.PlayerData = [
         "team": "Green Bay Packers",
         "position": "QB",
         "EV": 278.2,
-        "risk": null,
+        "risk": 0.367,
         "ADP": 143.42
     },
     {
@@ -167,7 +167,7 @@ window.PlayerData = [
         "team": "Jacksonville Jaguars",
         "position": "QB",
         "EV": 275.3,
-        "risk": null,
+        "risk": 0.459,
         "ADP": 151.1
     },
     {
@@ -176,7 +176,7 @@ window.PlayerData = [
         "team": "Carolina Panthers",
         "position": "QB",
         "EV": 263.5,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 180.92
     },
     {
@@ -194,7 +194,7 @@ window.PlayerData = [
         "team": "Miami Dolphins",
         "position": "QB",
         "EV": 262.6,
-        "risk": null,
+        "risk": 0.347,
         "ADP": 167.22
     },
     {
@@ -203,7 +203,7 @@ window.PlayerData = [
         "team": "Los Angeles Rams",
         "position": "QB",
         "EV": 261.5,
-        "risk": null,
+        "risk": 0.132,
         "ADP": 190.02
     },
     {
@@ -212,7 +212,7 @@ window.PlayerData = [
         "team": "Seattle Seahawks",
         "position": "QB",
         "EV": 260.6,
-        "risk": null,
+        "risk": 0.073,
         "ADP": 192.07
     },
     {
@@ -221,7 +221,7 @@ window.PlayerData = [
         "team": "San Francisco 49ers (Backup)",
         "position": "QB",
         "EV": 254.4,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 198.83
     },
     {
@@ -239,7 +239,7 @@ window.PlayerData = [
         "team": "Denver Broncos",
         "position": "QB",
         "EV": 195.6,
-        "risk": null,
+        "risk": 0.422,
         "ADP": 232.85
     },
     {
@@ -248,7 +248,7 @@ window.PlayerData = [
         "team": "Draft Prospect (Not in NFL yet)",
         "position": "QB",
         "EV": 162.9,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 402.35
     },
     {
@@ -257,7 +257,7 @@ window.PlayerData = [
         "team": "Indianapolis Colts",
         "position": "QB",
         "EV": 58.4,
-        "risk": null,
+        "risk": 0.762,
         "ADP": 235.33
     },
     {
@@ -284,7 +284,7 @@ window.PlayerData = [
         "team": "Kansas City Chiefs (Backup)",
         "position": "QB",
         "EV": 10.1,
-        "risk": null,
+        "risk": 0.11,
         "ADP": 400.2
     },
     {
@@ -293,7 +293,7 @@ window.PlayerData = [
         "team": "Start with Chicago Bears or AFC team (Practice Squad)",
         "position": "QB",
         "EV": 10.1,
-        "risk": null,
+        "risk": 0.245,
         "ADP": 466.0
     },
     {
@@ -320,7 +320,7 @@ window.PlayerData = [
         "team": "Pittsburgh Steelers",
         "position": "QB",
         "EV": 7.9,
-        "risk": null,
+        "risk": 0.188,
         "ADP": 351.59
     },
     {
@@ -329,7 +329,7 @@ window.PlayerData = [
         "team": "Minnesota Vikings",
         "position": "QB",
         "EV": 7.3,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 315.15
     },
     {
@@ -347,7 +347,7 @@ window.PlayerData = [
         "team": "Free Agent (Last with Chicago Bears)",
         "position": "QB",
         "EV": 16.4,
-        "risk": null,
+        "risk": 0.343,
         "ADP": 318.9
     },
     {
@@ -365,7 +365,7 @@ window.PlayerData = [
         "team": "Tennessee Titans (Backup)",
         "position": "QB",
         "EV": 16.2,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 397.4
     },
     {
@@ -401,7 +401,7 @@ window.PlayerData = [
         "team": "Pittsburgh Steelers",
         "position": "QB",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 217.07
     },
     {
@@ -509,7 +509,7 @@ window.PlayerData = [
         "team": "New England Patriots",
         "position": "QB",
         "EV": null,
-        "risk": null,
+        "risk": 0.173,
         "ADP": 359.8
     },
     {
@@ -563,7 +563,7 @@ window.PlayerData = [
         "team": "Washington Commanders",
         "position": "QB",
         "EV": null,
-        "risk": null,
+        "risk": 0.343,
         "ADP": 376.55
     },
     {
@@ -599,7 +599,7 @@ window.PlayerData = [
         "team": "Buffalo Bills",
         "position": "QB",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 389.85
     },
     {
@@ -626,7 +626,7 @@ window.PlayerData = [
         "team": "Seattle Seahawks",
         "position": "QB",
         "EV": null,
-        "risk": null,
+        "risk": 0.301,
         "ADP": 392.8
     },
     {
@@ -671,7 +671,7 @@ window.PlayerData = [
         "team": "Tennessee Titans",
         "position": "QB",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 409.8
     },
     {
@@ -689,7 +689,7 @@ window.PlayerData = [
         "team": "Baltimore Ravens",
         "position": "QB",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 410.4
     },
     {
@@ -752,7 +752,7 @@ window.PlayerData = [
         "team": "Carolina Panthers",
         "position": "QB",
         "EV": null,
-        "risk": null,
+        "risk": 0.202,
         "ADP": 455.85
     },
     {
@@ -770,7 +770,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "QB",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 461.0
     },
     {
@@ -923,7 +923,7 @@ window.PlayerData = [
         "team": "Baltimore Ravens",
         "position": "QB",
         "EV": null,
-        "risk": null,
+        "risk": 0.114,
         "ADP": 617.0
     },
     {
@@ -950,7 +950,7 @@ window.PlayerData = [
         "team": "Houston Texans",
         "position": "QB",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 651.0
     },
     {
@@ -968,7 +968,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "QB",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 668.0
     },
     {
@@ -977,7 +977,7 @@ window.PlayerData = [
         "team": "Pittsburgh Steelers",
         "position": "QB",
         "EV": null,
-        "risk": null,
+        "risk": 0.182,
         "ADP": 675.0
     },
     {
@@ -1130,7 +1130,7 @@ window.PlayerData = [
         "team": "Atlanta Falcons",
         "position": "QB",
         "EV": null,
-        "risk": null,
+        "risk": 0.384,
         "ADP": 831.0
     },
     {
@@ -1202,7 +1202,7 @@ window.PlayerData = [
         "team": "Indianapolis Colts",
         "position": "RB",
         "EV": 285.3,
-        "risk": null,
+        "risk": 0.427,
         "ADP": 20.03
     },
     {
@@ -1211,7 +1211,7 @@ window.PlayerData = [
         "team": "New York Jets",
         "position": "RB",
         "EV": 284.2,
-        "risk": null,
+        "risk": 0.232,
         "ADP": 35.65
     },
     {
@@ -1220,7 +1220,7 @@ window.PlayerData = [
         "team": "San Francisco 49ers",
         "position": "RB",
         "EV": 283.1,
-        "risk": null,
+        "risk": 0.374,
         "ADP": 7.86
     },
     {
@@ -1229,7 +1229,7 @@ window.PlayerData = [
         "team": "Philadelphia Eagles",
         "position": "RB",
         "EV": 278.4,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 4.14
     },
     {
@@ -1247,7 +1247,7 @@ window.PlayerData = [
         "team": "Washington Commanders",
         "position": "RB",
         "EV": 274.8,
-        "risk": null,
+        "risk": 1.0,
         "ADP": 120.21
     },
     {
@@ -1256,7 +1256,7 @@ window.PlayerData = [
         "team": "Green Bay Packers",
         "position": "RB",
         "EV": 274.2,
-        "risk": null,
+        "risk": 0.338,
         "ADP": 16.79
     },
     {
@@ -1265,7 +1265,7 @@ window.PlayerData = [
         "team": "Tennessee Titans",
         "position": "RB",
         "EV": 273.1,
-        "risk": null,
+        "risk": 0.604,
         "ADP": 63.56
     },
     {
@@ -1274,7 +1274,7 @@ window.PlayerData = [
         "team": "Cleveland Browns",
         "position": "RB",
         "EV": 272.8,
-        "risk": null,
+        "risk": 0.27,
         "ADP": 135.0
     },
     {
@@ -1283,7 +1283,7 @@ window.PlayerData = [
         "team": "Houston Texans",
         "position": "RB",
         "EV": 272.1,
-        "risk": null,
+        "risk": 0.719,
         "ADP": 98.25
     },
     {
@@ -1292,7 +1292,7 @@ window.PlayerData = [
         "team": "New Orleans Saints",
         "position": "RB",
         "EV": 271.5,
-        "risk": null,
+        "risk": 1.0,
         "ADP": 36.28
     },
     {
@@ -1301,7 +1301,7 @@ window.PlayerData = [
         "team": "Miami Dolphins",
         "position": "RB",
         "EV": 270.8,
-        "risk": null,
+        "risk": 0.531,
         "ADP": 227.95
     },
     {
@@ -1310,7 +1310,7 @@ window.PlayerData = [
         "team": "Detroit Lions",
         "position": "RB",
         "EV": 270.2,
-        "risk": null,
+        "risk": 0.722,
         "ADP": 58.43
     },
     {
@@ -1319,7 +1319,7 @@ window.PlayerData = [
         "team": "Buffalo Bills",
         "position": "RB",
         "EV": 269.7,
-        "risk": null,
+        "risk": 0.088,
         "ADP": 30.32
     },
     {
@@ -1328,7 +1328,7 @@ window.PlayerData = [
         "team": "Los Angeles Rams",
         "position": "RB",
         "EV": 269.1,
-        "risk": null,
+        "risk": 0.132,
         "ADP": 23.85
     },
     {
@@ -1362,7 +1362,7 @@ window.PlayerData = [
         "team": "Carolina Panthers",
         "position": "RB",
         "EV": 266.7,
-        "risk": null,
+        "risk": 0.342,
         "ADP": 223.63
     },
     {
@@ -1371,7 +1371,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "RB",
         "EV": 266.1,
-        "risk": null,
+        "risk": 0.633,
     },
     {
         "id": "rb_ty_johnson",
@@ -1379,7 +1379,7 @@ window.PlayerData = [
         "team": "Buffalo Bills",
         "position": "RB",
         "EV": 265.5,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 317.71
     },
     {
@@ -1388,7 +1388,7 @@ window.PlayerData = [
         "team": "Baltimore Ravens",
         "position": "RB",
         "EV": 264.9,
-        "risk": null,
+        "risk": 0.865,
         "ADP": 209.3
     },
     {
@@ -1397,7 +1397,7 @@ window.PlayerData = [
         "team": "Atlanta Falcons",
         "position": "RB",
         "EV": 264.3,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 165.09
     },
     {
@@ -1415,7 +1415,7 @@ window.PlayerData = [
         "team": "Tampa Bay Buccaneers",
         "position": "RB",
         "EV": 263.1,
-        "risk": null,
+        "risk": 0.261,
         "ADP": 139.83
     },
     {
@@ -1433,7 +1433,7 @@ window.PlayerData = [
         "team": "Chicago Bears",
         "position": "RB",
         "EV": 261.9,
-        "risk": null,
+        "risk": 0.865,
         "ADP": 226.79
     },
     {
@@ -1451,7 +1451,7 @@ window.PlayerData = [
         "team": "Atlanta Falcons",
         "position": "RB",
         "EV": 266.2,
-        "risk": null,
+        "risk": 0.057,
         "ADP": 2.15
     },
     {
@@ -1487,7 +1487,7 @@ window.PlayerData = [
         "team": "Cincinnati Bengals",
         "position": "RB",
         "EV": 208.6,
-        "risk": null,
+        "risk": 0.348,
         "ADP": 18.52
     },
     {
@@ -1496,7 +1496,7 @@ window.PlayerData = [
         "team": "Tampa Bay Buccaneers",
         "position": "RB",
         "EV": 209.7,
-        "risk": null,
+        "risk": 0.589,
         "ADP": 20.28
     },
     {
@@ -1532,7 +1532,7 @@ window.PlayerData = [
         "team": "Carolina Panthers",
         "position": "RB",
         "EV": 186.4,
-        "risk": null,
+        "risk": 0.066,
         "ADP": 44.17
     },
     {
@@ -1541,7 +1541,7 @@ window.PlayerData = [
         "team": "Arizona Cardinals",
         "position": "RB",
         "EV": 189.8,
-        "risk": null,
+        "risk": 0.132,
         "ADP": 48.42
     },
     {
@@ -1550,7 +1550,7 @@ window.PlayerData = [
         "team": "Chicago Bears",
         "position": "RB",
         "EV": 166.6,
-        "risk": null,
+        "risk": 0.522,
         "ADP": 57.81
     },
     {
@@ -1568,7 +1568,7 @@ window.PlayerData = [
         "team": "Kansas City Chiefs",
         "position": "RB",
         "EV": 148.6,
-        "risk": null,
+        "risk": 0.626,
         "ADP": 61.33
     },
     {
@@ -1604,7 +1604,7 @@ window.PlayerData = [
         "team": "Pittsburgh Steelers",
         "position": "RB",
         "EV": 129.4,
-        "risk": null,
+        "risk": 0.51,
         "ADP": 82.28
     },
     {
@@ -1622,7 +1622,7 @@ window.PlayerData = [
         "team": "Minnesota Vikings",
         "position": "RB",
         "EV": 118.4,
-        "risk": null,
+        "risk": 0.32,
         "ADP": 93.97
     },
     {
@@ -1640,7 +1640,7 @@ window.PlayerData = [
         "team": "Seattle Seahawks",
         "position": "RB",
         "EV": 119.3,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 98.1
     },
     {
@@ -1649,7 +1649,7 @@ window.PlayerData = [
         "team": "Denver Broncos",
         "position": "RB",
         "EV": 117.7,
-        "risk": null,
+        "risk": 0.341,
         "ADP": 100.6
     },
     {
@@ -1676,7 +1676,7 @@ window.PlayerData = [
         "team": "New England Patriots",
         "position": "RB",
         "EV": 111.9,
-        "risk": null,
+        "risk": 0.276,
         "ADP": 110.92
     },
     {
@@ -1685,7 +1685,7 @@ window.PlayerData = [
         "team": "Jacksonville Jaguars",
         "position": "RB",
         "EV": 98.1,
-        "risk": null,
+        "risk": 0.408,
         "ADP": 119.24
     },
     {
@@ -1703,7 +1703,7 @@ window.PlayerData = [
         "team": "New York Jets",
         "position": "RB",
         "EV": 78.6,
-        "risk": null,
+        "risk": 0.113,
         "ADP": 128.89
     },
     {
@@ -1712,7 +1712,7 @@ window.PlayerData = [
         "team": "Los Angeles Chargers",
         "position": "RB",
         "EV": 87.3,
-        "risk": null,
+        "risk": 0.044,
         "ADP": 130.27
     },
     {
@@ -1739,7 +1739,7 @@ window.PlayerData = [
         "team": "Arizona Cardinals",
         "position": "RB",
         "EV": 94.0,
-        "risk": null,
+        "risk": 0.552,
         "ADP": 141.81
     },
     {
@@ -1748,7 +1748,7 @@ window.PlayerData = [
         "team": "Tennessee Titans",
         "position": "RB",
         "EV": 75.7,
-        "risk": null,
+        "risk": 1.0,
         "ADP": 142.02
     },
     {
@@ -1757,7 +1757,7 @@ window.PlayerData = [
         "team": "Cleveland Browns",
         "position": "RB",
         "EV": 102.4,
-        "risk": null,
+        "risk": 0.661,
         "ADP": 148.19
     },
     {
@@ -1775,7 +1775,7 @@ window.PlayerData = [
         "team": "Buffalo Bills",
         "position": "RB",
         "EV": 85.1,
-        "risk": null,
+        "risk": 0.378,
         "ADP": 157.66
     },
     {
@@ -1784,7 +1784,7 @@ window.PlayerData = [
         "team": "Carolina Panthers",
         "position": "RB",
         "EV": 75.7,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 168.06
     },
     {
@@ -1793,7 +1793,7 @@ window.PlayerData = [
         "team": "San Francisco 49ers",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.644,
         "ADP": 184.76
     },
     {
@@ -1802,7 +1802,7 @@ window.PlayerData = [
         "team": "Kansas City Chiefs",
         "position": "RB",
         "EV": 71.7,
-        "risk": null,
+        "risk": 0.132,
         "ADP": 187.78
     },
     {
@@ -1820,7 +1820,7 @@ window.PlayerData = [
         "team": "Philadelphia Eagles",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.644,
         "ADP": 204.64
     },
     {
@@ -1847,7 +1847,7 @@ window.PlayerData = [
         "team": "New Orleans Saints",
         "position": "RB",
         "EV": 73.0,
-        "risk": null,
+        "risk": 1.0,
         "ADP": 214.73
     },
     {
@@ -1874,7 +1874,7 @@ window.PlayerData = [
         "team": "Baltimore Ravens",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.22,
         "ADP": 228.21
     },
     {
@@ -1919,7 +1919,7 @@ window.PlayerData = [
         "team": "Green Bay Packers",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.638,
         "ADP": 247.86
     },
     {
@@ -1937,7 +1937,7 @@ window.PlayerData = [
         "team": "San Francisco 49ers",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 249.0
     },
     {
@@ -1973,7 +1973,7 @@ window.PlayerData = [
         "team": "Houston Texans",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 1.0,
         "ADP": 276.8
     },
     {
@@ -1982,7 +1982,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 286.0
     },
     {
@@ -2027,7 +2027,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.346,
         "ADP": 296.56
     },
     {
@@ -2045,7 +2045,7 @@ window.PlayerData = [
         "team": "New York Giants",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.342,
         "ADP": 299.35
     },
     {
@@ -2072,7 +2072,7 @@ window.PlayerData = [
         "team": "New England Patriots",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.171,
         "ADP": 305.53
     },
     {
@@ -2090,7 +2090,7 @@ window.PlayerData = [
         "team": "Denver Broncos",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.512,
         "ADP": 311.61
     },
     {
@@ -2108,7 +2108,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.05,
         "ADP": 323.95
     },
     {
@@ -2117,7 +2117,7 @@ window.PlayerData = [
         "team": "Las Vegas Raiders",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 1.0,
         "ADP": 337.85
     },
     {
@@ -2144,7 +2144,7 @@ window.PlayerData = [
         "team": "Kansas City Chiefs",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 341.2
     },
     {
@@ -2171,7 +2171,7 @@ window.PlayerData = [
         "team": "Green Bay Packers",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.141,
         "ADP": 346.29
     },
     {
@@ -2207,7 +2207,7 @@ window.PlayerData = [
         "team": "Minnesota Vikings",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.132,
         "ADP": 368.0
     },
     {
@@ -2243,7 +2243,7 @@ window.PlayerData = [
         "team": "Washington Commanders",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 379.0
     },
     {
@@ -2297,7 +2297,7 @@ window.PlayerData = [
         "team": "Detroit Lions",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.311,
         "ADP": 398.0
     },
     {
@@ -2306,7 +2306,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.114,
         "ADP": 404.0
     },
     {
@@ -2315,7 +2315,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.249,
         "ADP": 405.3
     },
     {
@@ -2342,7 +2342,7 @@ window.PlayerData = [
         "team": "Pittsburgh Steelers",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 410.24
     },
     {
@@ -2360,7 +2360,7 @@ window.PlayerData = [
         "team": "Pittsburgh Steelers",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 421.18
     },
     {
@@ -2369,7 +2369,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.151,
         "ADP": 422.0
     },
     {
@@ -2396,7 +2396,7 @@ window.PlayerData = [
         "team": "Dallas Cowboys",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.352,
         "ADP": 428.0
     },
     {
@@ -2414,7 +2414,7 @@ window.PlayerData = [
         "team": "Minnesota Vikings",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 429.4
     },
     {
@@ -2423,7 +2423,7 @@ window.PlayerData = [
         "team": "Baltimore Ravens",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.735,
         "ADP": 430.6
     },
     {
@@ -2450,7 +2450,7 @@ window.PlayerData = [
         "team": "Arizona Cardinals",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.645,
         "ADP": 434.47
     },
     {
@@ -2477,7 +2477,7 @@ window.PlayerData = [
         "team": "New York Jets",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 448.65
     },
     {
@@ -2495,7 +2495,7 @@ window.PlayerData = [
         "team": "Tennessee Titans",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.11,
         "ADP": 453.0
     },
     {
@@ -2513,7 +2513,7 @@ window.PlayerData = [
         "team": "Los Angeles Chargers",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.088,
         "ADP": 456.0
     },
     {
@@ -2522,7 +2522,7 @@ window.PlayerData = [
         "team": "Las Vegas Raiders",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.068,
         "ADP": 457.0
     },
     {
@@ -2549,7 +2549,7 @@ window.PlayerData = [
         "team": "Denver Broncos",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.546,
         "ADP": 460.8
     },
     {
@@ -2558,7 +2558,7 @@ window.PlayerData = [
         "team": "Denver Broncos",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.038,
         "ADP": 466.0
     },
     {
@@ -2603,7 +2603,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.757,
         "ADP": 475.0
     },
     {
@@ -2612,7 +2612,7 @@ window.PlayerData = [
         "team": "Detroit Lions",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.176,
         "ADP": 475.0
     },
     {
@@ -2630,7 +2630,7 @@ window.PlayerData = [
         "team": "Chicago Bears",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 1.0,
         "ADP": 476.8
     },
     {
@@ -2639,7 +2639,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.653,
         "ADP": 477.2
     },
     {
@@ -2666,7 +2666,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.383,
         "ADP": 492.6
     },
     {
@@ -2711,7 +2711,7 @@ window.PlayerData = [
         "team": "Miami Dolphins",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.461,
         "ADP": 503.0
     },
     {
@@ -2729,7 +2729,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.249,
         "ADP": 512.0
     },
     {
@@ -2765,7 +2765,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.132,
         "ADP": 553.0
     },
     {
@@ -2801,7 +2801,7 @@ window.PlayerData = [
         "team": "Carolina Panthers",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.345,
         "ADP": 572.6
     },
     {
@@ -2864,7 +2864,7 @@ window.PlayerData = [
         "team": "Buffalo Bills",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.43,
         "ADP": 638.0
     },
     {
@@ -2882,7 +2882,7 @@ window.PlayerData = [
         "team": "New York Jets",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.368,
         "ADP": 657.0
     },
     {
@@ -2990,7 +2990,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.532,
         "ADP": 734.0
     },
     {
@@ -2999,7 +2999,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "RB",
         "EV": null,
-        "risk": null,
+        "risk": 0.113,
         "ADP": 743.0
     },
     {
@@ -3206,7 +3206,7 @@ window.PlayerData = [
         "team": "Cincinnati Bengals",
         "position": "WR",
         "EV": 352.9,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 1.0
     },
     {
@@ -3215,7 +3215,7 @@ window.PlayerData = [
         "team": "Minnesota Vikings",
         "position": "WR",
         "EV": 307.4,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 4.79
     },
     {
@@ -3224,7 +3224,7 @@ window.PlayerData = [
         "team": "Dallas Cowboys",
         "position": "WR",
         "EV": 302.6,
-        "risk": null,
+        "risk": 0.446,
         "ADP": 5.13
     },
     {
@@ -3233,7 +3233,7 @@ window.PlayerData = [
         "team": "Los Angeles Rams",
         "position": "WR",
         "EV": 291,
-        "risk": null,
+        "risk": 0.157,
         "ADP": 11.86
     },
     {
@@ -3242,7 +3242,7 @@ window.PlayerData = [
         "team": "New York Giants",
         "position": "WR",
         "EV": 291,
-        "risk": null,
+        "risk": 1.0,
         "ADP": 9.41
     },
     {
@@ -3251,7 +3251,7 @@ window.PlayerData = [
         "team": "Detroit Lions",
         "position": "WR",
         "EV": 289.2,
-        "risk": null,
+        "risk": 0.063,
         "ADP": 9.91
     },
     {
@@ -3260,7 +3260,7 @@ window.PlayerData = [
         "team": "Houston Texans",
         "position": "WR",
         "EV": 276.2,
-        "risk": null,
+        "risk": 0.392,
         "ADP": 12.12
     },
     {
@@ -3278,7 +3278,7 @@ window.PlayerData = [
         "team": "Atlanta Falcons",
         "position": "WR",
         "EV": 267.8,
-        "risk": null,
+        "risk": 0.289,
         "ADP": 18.46
     },
     {
@@ -3287,7 +3287,7 @@ window.PlayerData = [
         "team": "Miami Dolphins",
         "position": "WR",
         "EV": 260.4,
-        "risk": null,
+        "risk": 0.802,
         "ADP": 30.95
     },
     {
@@ -3296,7 +3296,7 @@ window.PlayerData = [
         "team": "Philadelphia Eagles",
         "position": "WR",
         "EV": 258.4,
-        "risk": null,
+        "risk": 0.622,
         "ADP": 21.22
     },
     {
@@ -3305,7 +3305,7 @@ window.PlayerData = [
         "team": "Los Angeles Chargers",
         "position": "WR",
         "EV": 254.4,
-        "risk": null,
+        "risk": 0.629,
         "ADP": 26.01
     },
     {
@@ -3314,7 +3314,7 @@ window.PlayerData = [
         "team": "Cincinnati Bengals",
         "position": "WR",
         "EV": 248.3,
-        "risk": null,
+        "risk": 1.0,
         "ADP": 31.54
     },
     {
@@ -3323,7 +3323,7 @@ window.PlayerData = [
         "team": "Tampa Bay Buccaneers",
         "position": "WR",
         "EV": 246.9,
-        "risk": null,
+        "risk": 1.0,
         "ADP": 41.57
     },
     {
@@ -3341,7 +3341,7 @@ window.PlayerData = [
         "team": "Washington Commanders",
         "position": "WR",
         "EV": 245.5,
-        "risk": null,
+        "risk": 0.16,
         "ADP": 41.72
     },
     {
@@ -3350,7 +3350,7 @@ window.PlayerData = [
         "team": "Los Angeles Rams",
         "position": "WR",
         "EV": 244.5,
-        "risk": null,
+        "risk": 0.97,
         "ADP": 39.83
     },
     {
@@ -3377,7 +3377,7 @@ window.PlayerData = [
         "team": "Pittsburgh Steelers",
         "position": "WR",
         "EV": 235,
-        "risk": null,
+        "risk": 0.283,
         "ADP": 50.34
     },
     {
@@ -3395,7 +3395,7 @@ window.PlayerData = [
         "team": "Baltimore Ravens",
         "position": "WR",
         "EV": 225.1,
-        "risk": null,
+        "risk": 0.711,
         "ADP": 61.18
     },
     {
@@ -3404,7 +3404,7 @@ window.PlayerData = [
         "team": "Kansas City Chiefs",
         "position": "WR",
         "EV": 221.5,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 54.72
     },
     {
@@ -3422,7 +3422,7 @@ window.PlayerData = [
         "team": "Cleveland Browns",
         "position": "WR",
         "EV": 220.2,
-        "risk": null,
+        "risk": 0.047,
         "ADP": 70.78
     },
     {
@@ -3431,7 +3431,7 @@ window.PlayerData = [
         "team": "Philadelphia Eagles",
         "position": "WR",
         "EV": 219.5,
-        "risk": null,
+        "risk": 1.0,
         "ADP": 56.23
     },
     {
@@ -3449,7 +3449,7 @@ window.PlayerData = [
         "team": "Tennessee Titans",
         "position": "WR",
         "EV": 213,
-        "risk": null,
+        "risk": 0.114,
         "ADP": 61.14
     },
     {
@@ -3458,7 +3458,7 @@ window.PlayerData = [
         "team": "Dallas Cowboys",
         "position": "WR",
         "EV": 209.5,
-        "risk": null,
+        "risk": 0.723,
         "ADP": 62.19
     },
     {
@@ -3467,7 +3467,7 @@ window.PlayerData = [
         "team": "Miami Dolphins",
         "position": "WR",
         "EV": 208.1,
-        "risk": null,
+        "risk": 0.458,
         "ADP": 70.21
     },
     {
@@ -3476,7 +3476,7 @@ window.PlayerData = [
         "team": "Detroit Lions",
         "position": "WR",
         "EV": 206.7,
-        "risk": null,
+        "risk": 0.088,
         "ADP": 59.85
     },
     {
@@ -3485,7 +3485,7 @@ window.PlayerData = [
         "team": "Las Vegas Raiders",
         "position": "WR",
         "EV": 199.4,
-        "risk": null,
+        "risk": 0.333,
         "ADP": 86.73
     },
     {
@@ -3503,7 +3503,7 @@ window.PlayerData = [
         "team": "San Francisco 49ers",
         "position": "WR",
         "EV": 195.7,
-        "risk": null,
+        "risk": 0.05,
         "ADP": 84.41
     },
     {
@@ -3512,7 +3512,7 @@ window.PlayerData = [
         "team": "New England Patriots",
         "position": "WR",
         "EV": 195.2,
-        "risk": null,
+        "risk": 0.119,
         "ADP": 83.87
     },
     {
@@ -3530,7 +3530,7 @@ window.PlayerData = [
         "team": "New Orleans Saints",
         "position": "WR",
         "EV": 194.3,
-        "risk": null,
+        "risk": 1.0,
         "ADP": 78.38
     },
     {
@@ -3539,7 +3539,7 @@ window.PlayerData = [
         "team": "Seattle Seahawks",
         "position": "WR",
         "EV": 193.8,
-        "risk": null,
+        "risk": 0.647,
         "ADP": 86.6
     },
     {
@@ -3557,7 +3557,7 @@ window.PlayerData = [
         "team": "San Francisco 49ers",
         "position": "WR",
         "EV": 191.5,
-        "risk": null,
+        "risk": 0.512,
         "ADP": 103.5
     },
     {
@@ -3575,7 +3575,7 @@ window.PlayerData = [
         "team": "Chicago Bears",
         "position": "WR",
         "EV": 189.4,
-        "risk": null,
+        "risk": 0.088,
         "ADP": 77.97
     },
     {
@@ -3584,7 +3584,7 @@ window.PlayerData = [
         "team": "Buffalo Bills",
         "position": "WR",
         "EV": 181.8,
-        "risk": null,
+        "risk": 0.257,
         "ADP": 98.39
     },
     {
@@ -3611,7 +3611,7 @@ window.PlayerData = [
         "team": "Kansas City Chiefs",
         "position": "WR",
         "EV": 176.2,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 70.61
     },
     {
@@ -3620,7 +3620,7 @@ window.PlayerData = [
         "team": "Green Bay Packers",
         "position": "WR",
         "EV": 174.7,
-        "risk": null,
+        "risk": 0.208,
         "ADP": 114.22
     },
     {
@@ -3629,7 +3629,7 @@ window.PlayerData = [
         "team": "Minnesota Vikings",
         "position": "WR",
         "EV": 173.9,
-        "risk": null,
+        "risk": 0.214,
         "ADP": 90.68
     },
     {
@@ -3638,7 +3638,7 @@ window.PlayerData = [
         "team": "Indianapolis Colts",
         "position": "WR",
         "EV": 172.9,
-        "risk": null,
+        "risk": 0.778,
         "ADP": 120.93
     },
     {
@@ -3647,7 +3647,7 @@ window.PlayerData = [
         "team": "New Orleans Saints",
         "position": "WR",
         "EV": 171.6,
-        "risk": null,
+        "risk": 0.334,
         "ADP": 138.05
     },
     {
@@ -3656,7 +3656,7 @@ window.PlayerData = [
         "team": "Buffalo Bills",
         "position": "WR",
         "EV": 170.8,
-        "risk": null,
+        "risk": 0.663,
         "ADP": 116.69
     },
     {
@@ -3665,7 +3665,7 @@ window.PlayerData = [
         "team": "Atlanta Falcons",
         "position": "WR",
         "EV": 168.5,
-        "risk": null,
+        "risk": 0.511,
         "ADP": 131.75
     },
     {
@@ -3683,7 +3683,7 @@ window.PlayerData = [
         "team": "Cleveland Browns",
         "position": "WR",
         "EV": 154.8,
-        "risk": null,
+        "risk": 1.0,
         "ADP": 181.62
     },
     {
@@ -3692,7 +3692,7 @@ window.PlayerData = [
         "team": "Carolina Panthers",
         "position": "WR",
         "EV": 154.1,
-        "risk": null,
+        "risk": 0.811,
         "ADP": 177.0
     },
     {
@@ -3701,7 +3701,7 @@ window.PlayerData = [
         "team": "Baltimore Ravens",
         "position": "WR",
         "EV": 153.9,
-        "risk": null,
+        "risk": 0.104,
         "ADP": 174.52
     },
     {
@@ -3710,7 +3710,7 @@ window.PlayerData = [
         "team": "New York Giants",
         "position": "WR",
         "EV": 151.4,
-        "risk": null,
+        "risk": 0.038,
         "ADP": 178.84
     },
     {
@@ -3728,7 +3728,7 @@ window.PlayerData = [
         "team": "Los Angeles Chargers",
         "position": "WR",
         "EV": 147.4,
-        "risk": null,
+        "risk": 0.279,
         "ADP": 138.02
     },
     {
@@ -3737,7 +3737,7 @@ window.PlayerData = [
         "team": "Kansas City Chiefs",
         "position": "WR",
         "EV": 146.8,
-        "risk": null,
+        "risk": 0.653,
         "ADP": 167.67
     },
     {
@@ -3746,7 +3746,7 @@ window.PlayerData = [
         "team": "Houston Texans",
         "position": "WR",
         "EV": 144.5,
-        "risk": null,
+        "risk": 0.214,
         "ADP": 140.99
     },
     {
@@ -3764,7 +3764,7 @@ window.PlayerData = [
         "team": "Tennessee Titans",
         "position": "WR",
         "EV": 131.4,
-        "risk": null,
+        "risk": 0.097,
         "ADP": 241.9
     },
     {
@@ -3773,7 +3773,7 @@ window.PlayerData = [
         "team": "Green Bay Packers",
         "position": "WR",
         "EV": 130.4,
-        "risk": null,
+        "risk": 0.791,
         "ADP": 198.35
     },
     {
@@ -3809,7 +3809,7 @@ window.PlayerData = [
         "team": "Minnesota Vikings",
         "position": "WR",
         "EV": 124.1,
-        "risk": null,
+        "risk": 1.0,
         "ADP": 170.28
     },
     {
@@ -3818,7 +3818,7 @@ window.PlayerData = [
         "team": "Arizona Cardinals",
         "position": "WR",
         "EV": 123.7,
-        "risk": null,
+        "risk": 0.211,
         "ADP": 260.55
     },
     {
@@ -3845,7 +3845,7 @@ window.PlayerData = [
         "team": "Carolina Panthers",
         "position": "WR",
         "EV": 114.2,
-        "risk": null,
+        "risk": 0.857,
         "ADP": 240.94
     },
     {
@@ -3863,7 +3863,7 @@ window.PlayerData = [
         "team": "Indianapolis Colts",
         "position": "WR",
         "EV": 105.8,
-        "risk": null,
+        "risk": 0.569,
         "ADP": 221.79
     },
     {
@@ -3872,7 +3872,7 @@ window.PlayerData = [
         "team": "New York Jets",
         "position": "WR",
         "EV": 104.9,
-        "risk": null,
+        "risk": 0.552,
         "ADP": 371.0
     },
     {
@@ -3881,7 +3881,7 @@ window.PlayerData = [
         "team": "New York Giants",
         "position": "WR",
         "EV": 104.6,
-        "risk": null,
+        "risk": 0.642,
         "ADP": 244.36
     },
     {
@@ -3890,7 +3890,7 @@ window.PlayerData = [
         "team": "Los Angeles Chargers",
         "position": "WR",
         "EV": 104.5,
-        "risk": null,
+        "risk": 0.397,
         "ADP": 206.37
     },
     {
@@ -3899,7 +3899,7 @@ window.PlayerData = [
         "team": "Los Angeles Rams",
         "position": "WR",
         "EV": 104.3,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 294.08
     },
     {
@@ -3908,7 +3908,7 @@ window.PlayerData = [
         "team": "Jacksonville Jaguars",
         "position": "WR",
         "EV": 103.4,
-        "risk": null,
+        "risk": 0.512,
         "ADP": 260.55
     },
     {
@@ -3917,7 +3917,7 @@ window.PlayerData = [
         "team": "Baltimore Ravens",
         "position": "WR",
         "EV": 102.2,
-        "risk": null,
+        "risk": 0.132,
         "ADP": 187.92
     },
     {
@@ -3926,7 +3926,7 @@ window.PlayerData = [
         "team": "Las Vegas Raiders",
         "position": "WR",
         "EV": 102.1,
-        "risk": null,
+        "risk": 0.227,
         "ADP": 220.06
     },
     {
@@ -3953,7 +3953,7 @@ window.PlayerData = [
         "team": "Denver Broncos",
         "position": "WR",
         "EV": 97.2,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 271.38
     },
     {
@@ -3962,7 +3962,7 @@ window.PlayerData = [
         "team": "Miami Dolphins",
         "position": "WR",
         "EV": 96.1,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 309.18
     },
     {
@@ -3971,7 +3971,7 @@ window.PlayerData = [
         "team": "Dallas Cowboys",
         "position": "WR",
         "EV": 95.2,
-        "risk": null,
+        "risk": 0.152,
         "ADP": 271.53
     },
     {
@@ -3989,7 +3989,7 @@ window.PlayerData = [
         "team": "Washington Commanders",
         "position": "WR",
         "EV": 90.3,
-        "risk": null,
+        "risk": 0.692,
         "ADP": 406.0
     },
     {
@@ -3998,7 +3998,7 @@ window.PlayerData = [
         "team": "Los Angeles Rams",
         "position": "WR",
         "EV": 89.6,
-        "risk": null,
+        "risk": 0.482,
         "ADP": 342.84
     },
     {
@@ -4016,7 +4016,7 @@ window.PlayerData = [
         "team": "New England Patriots",
         "position": "WR",
         "EV": 86.2,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 331.14
     },
     {
@@ -4025,7 +4025,7 @@ window.PlayerData = [
         "team": "Las Vegas Raiders",
         "position": "WR",
         "EV": 84.6,
-        "risk": null,
+        "risk": 0.075,
         "ADP": 286.53
     },
     {
@@ -4034,7 +4034,7 @@ window.PlayerData = [
         "team": "Arizona Cardinals",
         "position": "WR",
         "EV": 83.8,
-        "risk": null,
+        "risk": 0.141,
         "ADP": 440.59
     },
     {
@@ -4043,7 +4043,7 @@ window.PlayerData = [
         "team": "Pittsburgh Steelers",
         "position": "WR",
         "EV": 83.7,
-        "risk": null,
+        "risk": 0.971,
         "ADP": 323.63
     },
     {
@@ -4070,7 +4070,7 @@ window.PlayerData = [
         "team": "New Orleans Saints",
         "position": "WR",
         "EV": 79,
-        "risk": null,
+        "risk": 0.323,
         "ADP": 311.24
     },
     {
@@ -4079,7 +4079,7 @@ window.PlayerData = [
         "team": "Green Bay Packers",
         "position": "WR",
         "EV": 78,
-        "risk": null,
+        "risk": 0.114,
         "ADP": 280.98
     },
     {
@@ -4088,7 +4088,7 @@ window.PlayerData = [
         "team": "Cleveland Browns",
         "position": "WR",
         "EV": 76.6,
-        "risk": null,
+        "risk": 0.171,
         "ADP": 442.53
     },
     {
@@ -4097,7 +4097,7 @@ window.PlayerData = [
         "team": "New York Jets",
         "position": "WR",
         "EV": 76.1,
-        "risk": null,
+        "risk": 0.283,
         "ADP": 303.12
     },
     {
@@ -4106,7 +4106,7 @@ window.PlayerData = [
         "team": "Miami Dolphins",
         "position": "WR",
         "EV": 73,
-        "risk": null,
+        "risk": 0.713,
         "ADP": 324.41
     },
     {
@@ -4124,7 +4124,7 @@ window.PlayerData = [
         "team": "Buffalo Bills",
         "position": "WR",
         "EV": 72.5,
-        "risk": null,
+        "risk": 0.563,
         "ADP": 432.15
     },
     {
@@ -4133,7 +4133,7 @@ window.PlayerData = [
         "team": "Minnesota Vikings",
         "position": "WR",
         "EV": 70.7,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 303.06
     },
     {
@@ -4142,7 +4142,7 @@ window.PlayerData = [
         "team": "New Orleans Saints",
         "position": "WR",
         "EV": 69.7,
-        "risk": null,
+        "risk": 0.214,
         "ADP": 279.35
     },
     {
@@ -4160,7 +4160,7 @@ window.PlayerData = [
         "team": "Tennessee Titans",
         "position": "WR",
         "EV": 65.7,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 436.18
     },
     {
@@ -4178,7 +4178,7 @@ window.PlayerData = [
         "team": "Jacksonville Jaguars",
         "position": "WR",
         "EV": 60.9,
-        "risk": null,
+        "risk": 0.073,
         "ADP": 326.59
     },
     {
@@ -4196,7 +4196,7 @@ window.PlayerData = [
         "team": "Green Bay Packers",
         "position": "WR",
         "EV": 60.7,
-        "risk": null,
+        "risk": 0.672,
         "ADP": 323.69
     },
     {
@@ -4205,7 +4205,7 @@ window.PlayerData = [
         "team": "Kansas City Chiefs",
         "position": "WR",
         "EV": 60.6,
-        "risk": null,
+        "risk": 0.696,
         "ADP": 348.55
     },
     {
@@ -4232,7 +4232,7 @@ window.PlayerData = [
         "team": "Tampa Bay Buccaneers",
         "position": "WR",
         "EV": 54.7,
-        "risk": null,
+        "risk": 0.641,
         "ADP": 266.71
     },
     {
@@ -4241,7 +4241,7 @@ window.PlayerData = [
         "team": "San Francisco 49ers",
         "position": "WR",
         "EV": 54.2,
-        "risk": null,
+        "risk": 0.171,
         "ADP": 404.3
     },
     {
@@ -4250,7 +4250,7 @@ window.PlayerData = [
         "team": "Cincinnati Bengals",
         "position": "WR",
         "EV": 48.2,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 437.33
     },
     {
@@ -4268,7 +4268,7 @@ window.PlayerData = [
         "team": "Seattle Seahawks",
         "position": "WR",
         "EV": 45.5,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 428.9
     },
     {
@@ -4286,7 +4286,7 @@ window.PlayerData = [
         "team": "Arizona Cardinals",
         "position": "WR",
         "EV": 42.4,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 440.85
     },
     {
@@ -4304,7 +4304,7 @@ window.PlayerData = [
         "team": "Denver Broncos",
         "position": "WR",
         "EV": 40.4,
-        "risk": null,
+        "risk": 0.591,
     },
     {
         "id": "wr_jalen_royals",
@@ -4321,7 +4321,7 @@ window.PlayerData = [
         "team": "Detroit Lions",
         "position": "WR",
         "EV": 39.4,
-        "risk": null,
+        "risk": 0.493,
         "ADP": 440.6
     },
     {
@@ -4330,7 +4330,7 @@ window.PlayerData = [
         "team": "Buffalo Bills",
         "position": "WR",
         "EV": 37.9,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 328.75
     },
     {
@@ -4339,7 +4339,7 @@ window.PlayerData = [
         "team": "Houston Texans",
         "position": "WR",
         "EV": 37.6,
-        "risk": null,
+        "risk": 0.143,
         "ADP": 465.0
     },
     {
@@ -4348,7 +4348,7 @@ window.PlayerData = [
         "team": "Atlanta Falcons",
         "position": "WR",
         "EV": 37,
-        "risk": null,
+        "risk": 0.16,
         "ADP": 599.0
     },
     {
@@ -4366,7 +4366,7 @@ window.PlayerData = [
         "team": "Carolina Panthers",
         "position": "WR",
         "EV": 35.1,
-        "risk": null,
+        "risk": 0.224,
         "ADP": 424.2
     },
     {
@@ -4375,7 +4375,7 @@ window.PlayerData = [
         "team": "New York Giants",
         "position": "WR",
         "EV": 33.1,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 382.8
     },
     {
@@ -4384,7 +4384,7 @@ window.PlayerData = [
         "team": "Washington Commanders",
         "position": "WR",
         "EV": 33,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 286.95
     },
     {
@@ -4393,7 +4393,7 @@ window.PlayerData = [
         "team": "New England Patriots",
         "position": "WR",
         "EV": 33,
-        "risk": null,
+        "risk": 0.031,
         "ADP": 424.4
     },
     {
@@ -4411,7 +4411,7 @@ window.PlayerData = [
         "team": "Pittsburgh Steelers",
         "position": "WR",
         "EV": 30,
-        "risk": null,
+        "risk": 0.633,
         "ADP": 444.65
     },
     {
@@ -4420,7 +4420,7 @@ window.PlayerData = [
         "team": "Chicago Bears",
         "position": "WR",
         "EV": 30,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 337.25
     },
     {
@@ -4438,7 +4438,7 @@ window.PlayerData = [
         "team": "San Francisco 49ers",
         "position": "WR",
         "EV": 24.4,
-        "risk": null,
+        "risk": 0.381,
         "ADP": 328.84
     },
     {
@@ -4447,7 +4447,7 @@ window.PlayerData = [
         "team": "San Francisco 49ers",
         "position": "WR",
         "EV": 24.1,
-        "risk": null,
+        "risk": 0.188,
         "ADP": 388.6
     },
     {
@@ -4456,7 +4456,7 @@ window.PlayerData = [
         "team": "Kansas City Chiefs",
         "position": "WR",
         "EV": 22.9,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 382.0
     },
     {
@@ -4474,7 +4474,7 @@ window.PlayerData = [
         "team": "Baltimore Ravens",
         "position": "WR",
         "EV": 21.1,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 413.4
     },
     {
@@ -4483,7 +4483,7 @@ window.PlayerData = [
         "team": "Atlanta Falcons",
         "position": "WR",
         "EV": 20.7,
-        "risk": null,
+        "risk": 0.678,
         "ADP": 735.0
     },
     {
@@ -4492,7 +4492,7 @@ window.PlayerData = [
         "team": "Tampa Bay Buccaneers",
         "position": "WR",
         "EV": 20.3,
-        "risk": null,
+        "risk": 0.956,
         "ADP": 379.6
     },
     {
@@ -4510,7 +4510,7 @@ window.PlayerData = [
         "team": "Dallas Cowboys",
         "position": "WR",
         "EV": 19.3,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 740.0
     },
     {
@@ -4555,7 +4555,7 @@ window.PlayerData = [
         "team": "Minnesota Vikings",
         "position": "WR",
         "EV": 16.1,
-        "risk": null,
+        "risk": 0.088,
         "ADP": 515.0
     },
     {
@@ -4564,7 +4564,7 @@ window.PlayerData = [
         "team": "New Orleans Saints",
         "position": "WR",
         "EV": 15.8,
-        "risk": null,
+        "risk": 0.923,
         "ADP": 453.88
     },
     {
@@ -4644,7 +4644,7 @@ window.PlayerData = [
         "team": "Los Angeles Chargers",
         "position": "WR",
         "EV": 10.4,
-        "risk": null,
+        "risk": 0.502,
         "ADP": 410.0
     },
     {
@@ -4662,7 +4662,7 @@ window.PlayerData = [
         "team": "Pittsburgh Steelers",
         "position": "WR",
         "EV": 10.2,
-        "risk": null,
+        "risk": 0.594,
         "ADP": 519.0
     },
     {
@@ -4680,7 +4680,7 @@ window.PlayerData = [
         "team": "Arizona Cardinals",
         "position": "WR",
         "EV": 9.2,
-        "risk": null,
+        "risk": 0.412,
         "ADP": 772.0
     },
     {
@@ -4698,7 +4698,7 @@ window.PlayerData = [
         "team": "Cincinnati Bengals",
         "position": "WR",
         "EV": 8.8,
-        "risk": null,
+        "risk": 1.0,
         "ADP": 516.6
     },
     {
@@ -4716,7 +4716,7 @@ window.PlayerData = [
         "team": "Tennessee Titans",
         "position": "WR",
         "EV": 8.5,
-        "risk": null,
+        "risk": 0.207,
         "ADP": 557.0
     },
     {
@@ -4769,7 +4769,7 @@ window.PlayerData = [
         "team": "Cleveland Browns",
         "position": "WR",
         "EV": 7.4,
-        "risk": null,
+        "risk": 0.088,
         "ADP": 482.8
     },
     {
@@ -4796,7 +4796,7 @@ window.PlayerData = [
         "team": "Cleveland Browns",
         "position": "WR",
         "EV": 6.1,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 750.0
     },
     {
@@ -4841,7 +4841,7 @@ window.PlayerData = [
         "team": "Indianapolis Colts",
         "position": "WR",
         "EV": 4.3,
-        "risk": null,
+        "risk": 0.625,
         "ADP": 618.0
     },
     {
@@ -4877,7 +4877,7 @@ window.PlayerData = [
         "team": "Cleveland Browns",
         "position": "WR",
         "EV": 4.1,
-        "risk": null,
+        "risk": 0.06,
         "ADP": 509.88
     },
     {
@@ -4922,7 +4922,7 @@ window.PlayerData = [
         "team": "Houston Texans",
         "position": "WR",
         "EV": 2.3,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 392.0
     },
     {
@@ -4931,7 +4931,7 @@ window.PlayerData = [
         "team": "Houston Texans",
         "position": "WR",
         "EV": 2.2,
-        "risk": null,
+        "risk": 0.51,
         "ADP": 373.55
     },
     {
@@ -4958,7 +4958,7 @@ window.PlayerData = [
         "team": "Kansas City Chiefs",
         "position": "WR",
         "EV": 1.2,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 429.6
     },
     {
@@ -4967,7 +4967,7 @@ window.PlayerData = [
         "team": "San Francisco 49ers",
         "position": "WR",
         "EV": 0.9,
-        "risk": null,
+        "risk": 0.595,
         "ADP": 478.0
     },
     {
@@ -4976,7 +4976,7 @@ window.PlayerData = [
         "team": "New York Giants",
         "position": "WR",
         "EV": 0,
-        "risk": null,
+        "risk": 0.231,
         "ADP": 435.0
     },
     {
@@ -4985,7 +4985,7 @@ window.PlayerData = [
         "team": "New England Patriots",
         "position": "WR",
         "EV": 0,
-        "risk": null,
+        "risk": 0.742,
         "ADP": 550.0
     },
     {
@@ -4994,7 +4994,7 @@ window.PlayerData = [
         "team": "Tampa Bay Buccaneers",
         "position": "WR",
         "EV": 0,
-        "risk": null,
+        "risk": 0.754,
         "ADP": 777.0
     },
     {
@@ -5039,7 +5039,7 @@ window.PlayerData = [
         "team": "New York Giants",
         "position": "WR",
         "EV": -1.5,
-        "risk": null,
+        "risk": 0.038,
         "ADP": 629.8
     },
     {
@@ -5066,7 +5066,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "WR",
         "EV": null,
-        "risk": null,
+        "risk": 0.373,
         "ADP": 286.61
     },
     {
@@ -5120,7 +5120,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "WR",
         "EV": null,
-        "risk": null,
+        "risk": 0.462,
         "ADP": 318.0
     },
     {
@@ -5228,7 +5228,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "WR",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 362.0
     },
     {
@@ -5327,7 +5327,7 @@ window.PlayerData = [
         "team": "Carolina Panthers",
         "position": "WR",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 411.0
     },
     {
@@ -5336,7 +5336,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "WR",
         "EV": null,
-        "risk": null,
+        "risk": 0.155,
         "ADP": 414.0
     },
     {
@@ -5417,7 +5417,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "WR",
         "EV": null,
-        "risk": null,
+        "risk": 0.132,
         "ADP": 472.12
     },
     {
@@ -5498,7 +5498,7 @@ window.PlayerData = [
         "team": "Chicago Bears",
         "position": "WR",
         "EV": null,
-        "risk": null,
+        "risk": 0.1,
         "ADP": 512.2
     },
     {
@@ -5507,7 +5507,7 @@ window.PlayerData = [
         "team": "Dallas Cowboys",
         "position": "WR",
         "EV": null,
-        "risk": null,
+        "risk": 0.474,
         "ADP": 530.0
     },
     {
@@ -5552,7 +5552,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "WR",
         "EV": null,
-        "risk": null,
+        "risk": 0.278,
         "ADP": 558.2
     },
     {
@@ -5579,7 +5579,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "WR",
         "EV": null,
-        "risk": null,
+        "risk": 0.538,
         "ADP": 577.0
     },
     {
@@ -5696,7 +5696,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "WR",
         "EV": null,
-        "risk": null,
+        "risk": 0.485,
         "ADP": 631.0
     },
     {
@@ -5705,7 +5705,7 @@ window.PlayerData = [
         "team": "Los Angeles Chargers",
         "position": "WR",
         "EV": null,
-        "risk": null,
+        "risk": 0.368,
         "ADP": 632.0
     },
     {
@@ -5741,7 +5741,7 @@ window.PlayerData = [
         "team": "Arizona Cardinals",
         "position": "WR",
         "EV": null,
-        "risk": null,
+        "risk": 0.156,
         "ADP": 648.0
     },
     {
@@ -5786,7 +5786,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "WR",
         "EV": null,
-        "risk": null,
+        "risk": 1.0,
         "ADP": 679.0
     },
     {
@@ -5849,7 +5849,7 @@ window.PlayerData = [
         "team": "Las Vegas Raiders",
         "position": "WR",
         "EV": null,
-        "risk": null,
+        "risk": 0.396,
         "ADP": 695.0
     },
     {
@@ -5930,7 +5930,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "WR",
         "EV": null,
-        "risk": null,
+        "risk": 0.151,
         "ADP": 730.0
     },
     {
@@ -5957,7 +5957,7 @@ window.PlayerData = [
         "team": "New Orleans Saints",
         "position": "WR",
         "EV": null,
-        "risk": null,
+        "risk": 0.854,
         "ADP": 748.0
     },
     {
@@ -6335,7 +6335,7 @@ window.PlayerData = [
         "team": "Las Vegas Raiders",
         "position": "TE",
         "EV": 253.1,
-        "risk": null,
+        "risk": 0.06,
         "ADP": 19.33
     },
     {
@@ -6344,7 +6344,7 @@ window.PlayerData = [
         "team": "Arizona Cardinals",
         "position": "TE",
         "EV": 243.7,
-        "risk": null,
+        "risk": 0.43,
         "ADP": 27.24
     },
     {
@@ -6353,7 +6353,7 @@ window.PlayerData = [
         "team": "San Francisco 49ers",
         "position": "TE",
         "EV": 224.6,
-        "risk": null,
+        "risk": 0.844,
         "ADP": 39.32
     },
     {
@@ -6362,7 +6362,7 @@ window.PlayerData = [
         "team": "Kansas City Chiefs",
         "position": "TE",
         "EV": 188.5,
-        "risk": null,
+        "risk": 0.132,
         "ADP": 66.06
     },
     {
@@ -6371,7 +6371,7 @@ window.PlayerData = [
         "team": "Detroit Lions",
         "position": "TE",
         "EV": 184.8,
-        "risk": null,
+        "risk": 0.347,
         "ADP": 57.0
     },
     {
@@ -6380,7 +6380,7 @@ window.PlayerData = [
         "team": "Minnesota Vikings",
         "position": "TE",
         "EV": 178.5,
-        "risk": null,
+        "risk": 0.392,
         "ADP": 69.26
     },
     {
@@ -6389,7 +6389,7 @@ window.PlayerData = [
         "team": "Cleveland Browns",
         "position": "TE",
         "EV": 178.3,
-        "risk": null,
+        "risk": 1.0,
         "ADP": 91.61
     },
     {
@@ -6416,7 +6416,7 @@ window.PlayerData = [
         "team": "Jacksonville Jaguars",
         "position": "TE",
         "EV": 156.5,
-        "risk": null,
+        "risk": 0.973,
         "ADP": 87.44
     },
     {
@@ -6425,7 +6425,7 @@ window.PlayerData = [
         "team": "Dallas Cowboys",
         "position": "TE",
         "EV": 150.5,
-        "risk": null,
+        "risk": 0.896,
         "ADP": 135.28
     },
     {
@@ -6434,7 +6434,7 @@ window.PlayerData = [
         "team": "Green Bay Packers",
         "position": "TE",
         "EV": 147.6,
-        "risk": null,
+        "risk": 0.271,
         "ADP": 110.92
     },
     {
@@ -6443,7 +6443,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "TE",
         "EV": 145.2,
-        "risk": null,
+        "risk": 1.0,
         "ADP": 162.02
     },
     {
@@ -6452,7 +6452,7 @@ window.PlayerData = [
         "team": "Philadelphia Eagles",
         "position": "TE",
         "EV": 143.9,
-        "risk": null,
+        "risk": 1.0,
         "ADP": 149.33
     },
     {
@@ -6461,7 +6461,7 @@ window.PlayerData = [
         "team": "Atlanta Falcons",
         "position": "TE",
         "EV": 141.9,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 137.01
     },
     {
@@ -6470,7 +6470,7 @@ window.PlayerData = [
         "team": "Buffalo Bills",
         "position": "TE",
         "EV": 141,
-        "risk": null,
+        "risk": 0.504,
         "ADP": 130.98
     },
     {
@@ -6479,7 +6479,7 @@ window.PlayerData = [
         "team": "New England Patriots",
         "position": "TE",
         "EV": 135,
-        "risk": null,
+        "risk": 0.132,
         "ADP": 171.75
     },
     {
@@ -6497,7 +6497,7 @@ window.PlayerData = [
         "team": "Tampa Bay Buccaneers",
         "position": "TE",
         "EV": 130.9,
-        "risk": null,
+        "risk": 0.48,
         "ADP": 190.09
     },
     {
@@ -6506,7 +6506,7 @@ window.PlayerData = [
         "team": "Jacksonville Jaguars",
         "position": "TE",
         "EV": 129,
-        "risk": null,
+        "risk": 0.073,
         "ADP": 186.05
     },
     {
@@ -6524,7 +6524,7 @@ window.PlayerData = [
         "team": "Miami Dolphins",
         "position": "TE",
         "EV": 126.2,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 155.74
     },
     {
@@ -6542,7 +6542,7 @@ window.PlayerData = [
         "team": "Cincinnati Bengals",
         "position": "TE",
         "EV": 120.9,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 205.92
     },
     {
@@ -6551,7 +6551,7 @@ window.PlayerData = [
         "team": "Pittsburgh Steelers",
         "position": "TE",
         "EV": 118.5,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 206.93
     },
     {
@@ -6560,7 +6560,7 @@ window.PlayerData = [
         "team": "Baltimore Ravens",
         "position": "TE",
         "EV": 117.9,
-        "risk": null,
+        "risk": 0.427,
         "ADP": 194.49
     },
     {
@@ -6569,7 +6569,7 @@ window.PlayerData = [
         "team": "Houston Texans",
         "position": "TE",
         "EV": 117.1,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 256.36
     },
     {
@@ -6578,7 +6578,7 @@ window.PlayerData = [
         "team": "New Orleans Saints",
         "position": "TE",
         "EV": 114.6,
-        "risk": null,
+        "risk": 0.171,
         "ADP": 265.9
     },
     {
@@ -6596,7 +6596,7 @@ window.PlayerData = [
         "team": "New York Giants",
         "position": "TE",
         "EV": 111,
-        "risk": null,
+        "risk": 0.106,
         "ADP": 271.14
     },
     {
@@ -6614,7 +6614,7 @@ window.PlayerData = [
         "team": "Dallas Cowboys",
         "position": "TE",
         "EV": 96.7,
-        "risk": null,
+        "risk": 0.457,
         "ADP": 259.27
     },
     {
@@ -6623,7 +6623,7 @@ window.PlayerData = [
         "team": "Seattle Seahawks",
         "position": "TE",
         "EV": 89.8,
-        "risk": null,
+        "risk": 0.875,
         "ADP": 333.92
     },
     {
@@ -6632,7 +6632,7 @@ window.PlayerData = [
         "team": "Kansas City Chiefs",
         "position": "TE",
         "EV": 77.2,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 280.33
     },
     {
@@ -6641,7 +6641,7 @@ window.PlayerData = [
         "team": "Chicago Bears",
         "position": "TE",
         "EV": 72.1,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 251.15
     },
     {
@@ -6677,7 +6677,7 @@ window.PlayerData = [
         "team": "Washington Commanders",
         "position": "TE",
         "EV": 41.8,
-        "risk": null,
+        "risk": 0.11,
         "ADP": 343.39
     },
     {
@@ -6686,7 +6686,7 @@ window.PlayerData = [
         "team": "New Orleans Saints",
         "position": "TE",
         "EV": 15.5,
-        "risk": null,
+        "risk": 0.684,
         "ADP": 362.62
     },
     {
@@ -6713,7 +6713,7 @@ window.PlayerData = [
         "team": "Los Angeles Rams",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.345,
         "ADP": 294.69
     },
     {
@@ -6722,7 +6722,7 @@ window.PlayerData = [
         "team": "Philadelphia Eagles",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 301.2
     },
     {
@@ -6740,7 +6740,7 @@ window.PlayerData = [
         "team": "Los Angeles Chargers",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.455,
         "ADP": 310.05
     },
     {
@@ -6749,7 +6749,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.214,
         "ADP": 328.0
     },
     {
@@ -6758,7 +6758,7 @@ window.PlayerData = [
         "team": "Green Bay Packers",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.521,
         "ADP": 335.65
     },
     {
@@ -6776,7 +6776,7 @@ window.PlayerData = [
         "team": "Las Vegas Raiders",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 349.02
     },
     {
@@ -6794,7 +6794,7 @@ window.PlayerData = [
         "team": "Buffalo Bills",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 356.15
     },
     {
@@ -6803,7 +6803,7 @@ window.PlayerData = [
         "team": "Denver Broncos",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 356.2
     },
     {
@@ -6830,7 +6830,7 @@ window.PlayerData = [
         "team": "Los Angeles Chargers",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.731,
         "ADP": 380.65
     },
     {
@@ -6857,7 +6857,7 @@ window.PlayerData = [
         "team": "Cincinnati Bengals",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.332,
         "ADP": 397.0
     },
     {
@@ -6866,7 +6866,7 @@ window.PlayerData = [
         "team": "New England Patriots",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.071,
         "ADP": 403.7
     },
     {
@@ -6884,7 +6884,7 @@ window.PlayerData = [
         "team": "Pittsburgh Steelers",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 411.8
     },
     {
@@ -6902,7 +6902,7 @@ window.PlayerData = [
         "team": "Houston Texans",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.418,
         "ADP": 421.0
     },
     {
@@ -6938,7 +6938,7 @@ window.PlayerData = [
         "team": "Minnesota Vikings",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.46,
         "ADP": 431.6
     },
     {
@@ -6947,7 +6947,7 @@ window.PlayerData = [
         "team": "Miami Dolphins",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.278,
         "ADP": 433.15
     },
     {
@@ -6956,7 +6956,7 @@ window.PlayerData = [
         "team": "Carolina Panthers",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 1.0,
         "ADP": 434.6
     },
     {
@@ -6974,7 +6974,7 @@ window.PlayerData = [
         "team": "Los Angeles Rams",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.689,
         "ADP": 444.8
     },
     {
@@ -6992,7 +6992,7 @@ window.PlayerData = [
         "team": "Washington Commanders",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.147,
         "ADP": 448.8
     },
     {
@@ -7001,7 +7001,7 @@ window.PlayerData = [
         "team": "Indianapolis Colts",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.467,
         "ADP": 448.9
     },
     {
@@ -7028,7 +7028,7 @@ window.PlayerData = [
         "team": "Green Bay Packers",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.165,
         "ADP": 452.0
     },
     {
@@ -7055,7 +7055,7 @@ window.PlayerData = [
         "team": "New Orleans Saints",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.061,
         "ADP": 459.0
     },
     {
@@ -7091,7 +7091,7 @@ window.PlayerData = [
         "team": "Kansas City Chiefs",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.107,
         "ADP": 470.6
     },
     {
@@ -7109,7 +7109,7 @@ window.PlayerData = [
         "team": "Baltimore Ravens",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.342,
         "ADP": 476.8
     },
     {
@@ -7136,7 +7136,7 @@ window.PlayerData = [
         "team": "Las Vegas Raiders",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.553,
         "ADP": 487.4
     },
     {
@@ -7190,7 +7190,7 @@ window.PlayerData = [
         "team": "Houston Texans",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.46,
         "ADP": 510.0
     },
     {
@@ -7235,7 +7235,7 @@ window.PlayerData = [
         "team": "Tampa Bay Buccaneers",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.382,
         "ADP": 537.0
     },
     {
@@ -7244,7 +7244,7 @@ window.PlayerData = [
         "team": "Denver Broncos",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 541.0
     },
     {
@@ -7262,7 +7262,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.402,
         "ADP": 585.0
     },
     {
@@ -7280,7 +7280,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 594.0
     },
     {
@@ -7289,7 +7289,7 @@ window.PlayerData = [
         "team": "Washington Commanders",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.789,
         "ADP": 610.4
     },
     {
@@ -7325,7 +7325,7 @@ window.PlayerData = [
         "team": "Cincinnati Bengals",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.779,
         "ADP": 622.0
     },
     {
@@ -7352,7 +7352,7 @@ window.PlayerData = [
         "team": "Atlanta Falcons",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.889,
         "ADP": 636.0
     },
     {
@@ -7370,7 +7370,7 @@ window.PlayerData = [
         "team": "Detroit Lions",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.075,
         "ADP": 645.0
     },
     {
@@ -7406,7 +7406,7 @@ window.PlayerData = [
         "team": "New Orleans Saints",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 665.0
     },
     {
@@ -7415,7 +7415,7 @@ window.PlayerData = [
         "team": "Detroit Lions",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 667.0
     },
     {
@@ -7424,7 +7424,7 @@ window.PlayerData = [
         "team": "Miami Dolphins",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 671.0
     },
     {
@@ -7442,7 +7442,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.072,
         "ADP": 676.0
     },
     {
@@ -7451,7 +7451,7 @@ window.PlayerData = [
         "team": "New York Jets",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.231,
         "ADP": 691.0
     },
     {
@@ -7478,7 +7478,7 @@ window.PlayerData = [
         "team": "Seattle Seahawks",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 1.0,
         "ADP": 714.0
     },
     {
@@ -7487,7 +7487,7 @@ window.PlayerData = [
         "team": "Dallas Cowboys",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 719.0
     },
     {
@@ -7496,7 +7496,7 @@ window.PlayerData = [
         "team": "Cleveland Browns",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.132,
         "ADP": 724.0
     },
     {
@@ -7523,7 +7523,7 @@ window.PlayerData = [
         "team": "Free Agent",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 746.0
     },
     {
@@ -7532,7 +7532,7 @@ window.PlayerData = [
         "team": "Arizona Cardinals",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.088,
         "ADP": 751.0
     },
     {
@@ -7541,7 +7541,7 @@ window.PlayerData = [
         "team": "Tampa Bay Buccaneers",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 753.0
     },
     {
@@ -7631,7 +7631,7 @@ window.PlayerData = [
         "team": "Minnesota Vikings",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 809.0
     },
     {
@@ -7649,7 +7649,7 @@ window.PlayerData = [
         "team": "Jacksonville Jaguars",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.0,
         "ADP": 825.0
     },
     {
@@ -7658,7 +7658,7 @@ window.PlayerData = [
         "team": "Jacksonville Jaguars",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.181,
         "ADP": 830.0
     },
     {
@@ -7703,7 +7703,7 @@ window.PlayerData = [
         "team": "Atlanta Falcons",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.228,
         "ADP": 843.0
     },
     {
@@ -7712,7 +7712,7 @@ window.PlayerData = [
         "team": "Tampa Bay Buccaneers",
         "position": "TE",
         "EV": null,
-        "risk": null,
+        "risk": 0.088,
         "ADP": 849.0
     },
     {
