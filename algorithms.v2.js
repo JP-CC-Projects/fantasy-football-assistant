@@ -12,6 +12,10 @@
     const STARTERS = { QB: 1, RB: 2, WR: 2, TE: 1, FLEX: 1, DST: 1, K: 1 };
     const MAX_POS = { QB: 4, RB: 8, WR: 8, TE: 3, DST: 3, K: 3 };
     const FLEX_ELIGIBLE = new Set(["RB", "WR", "TE"]);
+    
+    // Soft per-position bench caps (tune per league philosophy)
+    // With 7 bench slots, this encourages a diversified bench and streaming DST/K.
+    const MAX_BENCH_BY_POS = { RB: 3, WR: 3, QB: 1, TE: 1, DST: 0, K: 0 };
   
     // Streaming depth bump (pushes replacement deeper -> lowers VOR early)
     const STREAM_FUDGE = { QB: -2, RB: 0, WR: 0, TE: 1, DST: 6, K: 8 };
@@ -51,7 +55,12 @@
       const starterOpen = rs.startersFilled[pos] < (STARTERS[pos] || 0);
       const flexOpen = FLEX_ELIGIBLE.has(pos) && rs.haveFlex < STARTERS.FLEX;
       const anyStarterOpen = starterOpen || flexOpen;
-      if (!anyStarterOpen && rs.benchTotal >= rs.benchCap) return false;
+      if (!anyStarterOpen) {
+        // apply per-position bench caps
+        const cap = MAX_BENCH_BY_POS[pos] ?? 99;
+        if (effectiveBenchAtPos(rs, pos) >= cap) return false;
+        if (rs.benchTotal >= rs.benchCap) return false;
+      }
       return true;
     }
   
@@ -159,14 +168,37 @@
     // ---- Roster-fit & policy weights ----
     function rosterFitWeight(pos, rs, opts = {}) {
       const { scoring = { ppr: 1.0, tePremium: 1.0 } } = opts;
+      const teMul = pos === 'TE' ? scoring.tePremium : 1;
+      // Starters and FLEX first
       const startersOpen = rs.startersFilled[pos] < (STARTERS[pos] || 0);
-      const flexOpen = FLEX_ELIGIBLE.has(pos) && rs.haveFlex < STARTERS.FLEX;
-      if (startersOpen) return 1.00 * (pos === 'TE' ? scoring.tePremium : 1);
-      if (flexOpen) return 0.90 * (pos === 'TE' ? scoring.tePremium : 1);
-  
+      const flexOpen = FLEX_ELIGIBLE.has(pos) && rs.haveFlex < (STARTERS.FLEX || 0);
+      if (startersOpen) return 1.00 * teMul;
+      if (flexOpen)     return 0.90 * teMul;
+
+      // Bench value decays quickly as depth increases
       const depthAtPos = rs.have[pos] - rs.startersFilled[pos];
-      const base = Math.max(0.40, 0.65 - 0.05 * depthAtPos);
-      return base * (pos === 'TE' ? scoring.tePremium : 1);
+      // ~0.60 at depth 1, ~0.37 at depth 2, ~0.22 at depth 3, ~0.13 at depth 4, floor 0.10
+      const base = Math.max(0.10, 0.95 * Math.exp(-0.45 * depthAtPos));
+      return base * teMul;
+    }
+
+    // Estimate how many players at `pos` are truly bench after accounting for starters and the single FLEX.
+    // We assign the single FLEX to whichever of RB/WR/TE currently has the largest surplus over starters.
+    function effectiveBenchAtPos(rs, pos) {
+      const starters = STARTERS[pos] || 0;
+      const have = rs.have[pos] || 0;
+      if (!FLEX_ELIGIBLE.has(pos) || (rs.haveFlex || 0) === 0) {
+        return Math.max(0, have - starters);
+      }
+      const surplus = {
+        RB: Math.max(0, (rs.have.RB || 0) - (STARTERS.RB || 0)),
+        WR: Math.max(0, (rs.have.WR || 0) - (STARTERS.WR || 0)),
+        TE: Math.max(0, (rs.have.TE || 0) - (STARTERS.TE || 0)),
+      };
+      // Assign the single FLEX to the position with the largest surplus (ties broken by order RB>WR>TE).
+      const flexPos = ['RB','WR','TE'].sort((a,b) => (surplus[b] - surplus[a]) || (a < b ? -1 : 1))[0];
+      const flexForThis = (flexPos === pos && (rs.haveFlex || 0) > 0) ? 1 : 0;
+      return Math.max(0, have - starters - flexForThis);
     }
   
     function riskPenalty(p, roundNumber, opts) {
