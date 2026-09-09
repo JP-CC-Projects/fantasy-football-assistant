@@ -95,20 +95,24 @@ class FantasyDraftApp {
 
     // Data Loading
     loadPlayersData() {
-        if (typeof window.PlayerData !== 'undefined') {
-            this.players = window.PlayerData;
-            
-            // Initialize players state if empty
-            if (this.playersState.players.length === 0) {
-                this.playersState.players = this.players.map(player => ({
-                    ...player,
-                    takenBy: null
-                }));
-                this.savePlayersState();
-            }
-        } else {
+        if (typeof window.PlayerData === 'undefined') {
             console.error('PlayerData not available');
+            return;
         }
+
+        this.players = window.PlayerData;
+        const datasetId = window.PlayerDataVersion || 'unknown';
+        const takenByMap = new Map(
+            (this.playersState.players || []).map(p => [p.id, p.takenBy])
+        );
+        const sameDataset = this.playersState.datasetId === datasetId;
+
+        this.playersState.datasetId = datasetId;
+        this.playersState.players = this.players.map(player => ({
+            ...player,
+            takenBy: sameDataset ? (takenByMap.get(player.id) ?? null) : null
+        }));
+        this.savePlayersState();
     }
 
     // Event Listeners
@@ -353,7 +357,10 @@ class FantasyDraftApp {
                 <div class="player-name">${player.name}</div>
                 <div class="player-details">
                     <span>${player.team}</span>
-                    <span class="player-ev">${player.EV}</span>
+                    <span class="player-metrics">
+                        ${player.risk > 0.05 ? `<span class="player-risk" title="Injury/frailty score (0-1)">${Number(player.risk).toFixed(2)}</span>` : ""}
+                        <span class="player-ev">${player.EV}</span>
+                    </span>
                 </div>
             </div>
         `;
@@ -728,6 +735,55 @@ class FantasyDraftApp {
         return sigmaByPos[position] || 8.0;
     }
 
+    rosterSnapshotFromCounts(counts) {
+        const have = {
+            QB: counts.QB || 0,
+            RB: counts.RB || 0,
+            WR: counts.WR || 0,
+            TE: counts.TE || 0,
+            DST: counts.DST || 0,
+            K: counts.K || 0
+        };
+        const startersFilled = {
+            QB: Math.min(have.QB, 1),
+            RB: Math.min(have.RB, 2),
+            WR: Math.min(have.WR, 2),
+            TE: Math.min(have.TE, 1),
+            DST: Math.min(have.DST, 1),
+            K: Math.min(have.K, 1)
+        };
+        const skillStarters = 5;
+        const skillHave = have.RB + have.WR + have.TE;
+        const haveFlex = Math.min(1, Math.max(0, skillHave - skillStarters));
+        const starterSlots = 8;
+        const total = have.QB + have.RB + have.WR + have.TE + have.DST + have.K;
+        return {
+            have,
+            startersFilled,
+            haveFlex,
+            benchTotal: Math.max(0, total - starterSlots - haveFlex),
+            benchCap: 7
+        };
+    }
+
+    initialByPosFromPlayers() {
+        const counts = { QB: 0, RB: 0, WR: 0, TE: 0, DST: 0, K: 0 };
+        for (const p of this.players || []) {
+            if (counts[p.position] != null) counts[p.position] += 1;
+        }
+        return counts;
+    }
+
+    opponentsFromRosters() {
+        const nTeams = this.settings.nTeams;
+        const opponents = [];
+        for (let s = 0; s < nTeams; s++) {
+            const teamId = this.settings.pickOrder[s];
+            opponents.push(this.rosterSnapshotFromCounts(this.rosters[teamId] || {}));
+        }
+        return opponents;
+    }
+
     // Algorithm Integration
     getAlgorithmTopPicks() {
         if (typeof window.DraftAlgo === 'undefined') {
@@ -736,24 +792,21 @@ class FantasyDraftApp {
         }
 
         try {
-            // Create roster state for the algorithm
-            const myRoster = this.rosters[this.settings.myTeamId];
+            const mySnap = this.rosterSnapshotFromCounts(this.rosters[this.settings.myTeamId] || {});
             const rosterState = window.DraftAlgo.makeEmptyRosterState();
-            
-            // Convert our roster format to algorithm format
-            rosterState.have = { ...myRoster };
-            rosterState.startersFilled = {
-                QB: Math.min(myRoster.QB, 1),
-                RB: Math.min(myRoster.RB, 2),
-                WR: Math.min(myRoster.WR, 2),
-                TE: Math.min(myRoster.TE, 1),
-                DST: Math.min(myRoster.DST, 1),
-                K: Math.min(myRoster.K, 1)
-            };
-            rosterState.haveFlex = Math.min(myRoster.FLEX, 1);
-            rosterState.benchTotal = myRoster.bench;
+            rosterState.have = mySnap.have;
+            rosterState.startersFilled = mySnap.startersFilled;
+            rosterState.haveFlex = mySnap.haveFlex;
+            rosterState.benchTotal = mySnap.benchTotal;
+            rosterState.benchCap = mySnap.benchCap;
+            rosterState.rosterPlayers = this.playersState.players
+                .filter(p => p.takenBy === this.settings.myTeamId)
+                .map(p => ({
+                    pos: p.position,
+                    bye: p.bye ?? null,
+                    team: p.team || null
+                }));
 
-            // Get available players
             const availablePlayers = this.playersState.players
                 .filter(p => p.takenBy === null)
                 .map(p => ({
@@ -761,12 +814,12 @@ class FantasyDraftApp {
                     name: p.name,
                     pos: p.position,
                     EV: p.EV,
-                    ADP: p.ADP || null, // Use actual ADP data if available
-                    risk: 0,
-                    bye: null,
-                    team: p.team || null, // Include team for synergy scoring
-                    tier: null, // Could be added later if you have tier data
-                    adpStd: null // Could be calculated from ADP variance if needed
+                    ADP: p.ADP || null,
+                    risk: typeof p.risk === "number" ? p.risk : 0,
+                    bye: p.bye ?? null,
+                    team: p.team || null,
+                    tier: typeof p.tier === 'number' ? p.tier : null,
+                    adpStd: typeof p.adpStd === 'number' ? p.adpStd : null
                 }));
 
             console.log('Available players:', availablePlayers.length);
@@ -791,17 +844,17 @@ class FantasyDraftApp {
                 this.progress.round,
                 this.settings.pickOrder.indexOf(this.settings.myTeamId) + 1,
                 {
-                    // Use v2 advanced options optimized for ADP data
                     kDstGatingRound: 10,
                     kDstGateAtNextPick: true,
-                    topK: 30, // Dynamic candidate horizon
-                    sigmaByPos: { QB: 8, RB: 6, WR: 7, TE: 8, DST: 10, K: 12 }, // Tighter sigmas for better ADP precision
+                    topK: 30,
+                    sigmaByPos: { QB: 8, RB: 6, WR: 7, TE: 8, DST: 10, K: 12 },
                     scoring: { ppr: 1.0, tePremium: 1.0 },
                     seatIndex: this.settings.pickOrder.indexOf(this.settings.myTeamId),
+                    initialByPos: this.initialByPosFromPlayers(),
+                    opponents: this.opponentsFromRosters(),
                     runBoost: 0.35,
                     tierScarcityThreshold: 2,
-                    // Enhanced options for ADP utilization
-                    riskLambda: 0.1, // Small risk penalty
+                    riskAlpha: 0.30,
                     byePolicy: { maxSameByeStarters: { RB: 2, WR: 2, TE: 1 }, basePenalty: 0.05, scaleByRound: true, totalRounds: 16 }
                 }
             );

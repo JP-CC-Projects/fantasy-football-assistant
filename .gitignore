@@ -1,6 +1,9 @@
 # Ignore Cursor spec file
 cursor.md
 
+# Local refresh endpoints (not for the public repo)
+data/sources.local.json
+
 # Ignore all CSV data files
 *.csv
 

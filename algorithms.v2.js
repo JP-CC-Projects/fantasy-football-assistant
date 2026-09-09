@@ -19,6 +19,10 @@
   
     // Streaming depth bump (pushes replacement deeper -> lowers VOR early)
     const STREAM_FUDGE = { QB: -2, RB: 0, WR: 0, TE: 1, DST: 6, K: 8 };
+
+    // Injury haircut: penalty = RISK_ALPHA * risk * max(0, EV - replacement).
+    // risk is historical frailty (0-1), not a 2026 miss forecast, so keep alpha conservative.
+    const RISK_ALPHA = 0.30;
   
     // ---- Utilities ----
     const clamp = (x, lo, hi) => Math.max(lo, Math.min(hi, x));
@@ -37,7 +41,8 @@
         startersFilled: { QB: 0, RB: 0, WR: 0, TE: 0, DST: 0, K: 0 },
         haveFlex: 0,          // 0 or 1 (you have 1 FLEX starter slot)
         benchTotal: 0,
-        benchCap: 7
+        benchCap: 7,
+        rosterPlayers: []     // { pos, bye, team } already on this roster
       };
     }
   
@@ -201,13 +206,14 @@
       return Math.max(0, have - starters - flexForThis);
     }
   
-    function riskPenalty(p, roundNumber, opts) {
-      const { riskLambda = 0.0, riskLambdaByRound = null } = opts || {};
-      const lambda = typeof riskLambdaByRound === 'function' ? riskLambdaByRound(roundNumber) : (riskLambda || 0.0);
-      return lambda * (toNum(p.risk, 0));
+    function riskPenalty(p, opts, replacementEV) {
+      const alpha = isNum(opts && opts.riskAlpha) ? opts.riskAlpha : RISK_ALPHA;
+      const risk = clamp(toNum(p.risk, 0), 0, 1);
+      const valueAtRisk = Math.max(0, toNum(p.EV, 0) - toNum(replacementEV, 0));
+      return Math.max(0, alpha) * risk * valueAtRisk;
     }
   
-    // Simple bye clustering penalty only for starters
+    // Bye clustering penalty only for likely starters, using drafted players on this roster
     function byePenaltyFor(p, rs, roundNumber, opts = {}) {
       const policy = opts.byePolicy || null;
       if (!policy) return 0;
@@ -215,18 +221,29 @@
       if (!p.bye || !FLEX_ELIGIBLE.has(p.pos)) return 0;
   
       const startersOpen = rs.startersFilled[p.pos] < (STARTERS[p.pos] || 0) || (FLEX_ELIGIBLE.has(p.pos) && rs.haveFlex < STARTERS.FLEX);
-      if (!startersOpen) return 0; // only penalize clustering among likely starters
+      if (!startersOpen) return 0;
   
       const threshold = maxSameByeStarters[p.pos] ?? 2;
-      const currentSameBye = 0; // requires tracking your current roster by bye; omitted unless rs carries bye counts
-      // You can extend rs to hold bye counts; for now we apply a weak constant penalty near mid rounds.
+      const currentSameBye = (rs.rosterPlayers || []).filter(x =>
+        x && x.pos === p.pos && Number(x.bye) === Number(p.bye)
+      ).length;
+      if (currentSameBye < threshold) return 0;
+  
       let penalty = basePenalty;
       if (scaleByRound && totalRounds > 0) {
-        const t = 1 - clamp(roundNumber / totalRounds, 0, 1); // higher early, decays late
+        const t = 1 - clamp(roundNumber / totalRounds, 0, 1);
         penalty *= t;
       }
-      // Without explicit bye counts, apply a tiny penalty only (caller can set basePenalty=0 if undesired)
       return penalty;
+    }
+
+    function rosterSynergy(A, rosterPlayers, opts = {}) {
+      if (!A || !A.team || !Array.isArray(rosterPlayers) || rosterPlayers.length === 0) return 0;
+      let s = 0;
+      for (const mate of rosterPlayers) {
+        s += synergyScore(A, { pos: mate.pos, team: mate.team }, opts);
+      }
+      return s;
     }
   
     // ---- Survival models ----
@@ -347,7 +364,7 @@
      * @param {Object} opts Options
      *   - kDstGatingRound: number (default 10)
      *   - kDstGateAtNextPick: boolean (default true)
-     *   - riskLambda / riskLambdaByRound: number | (round)=>number
+     *   - riskAlpha: number (default 0.30). Penalty = alpha * risk * max(0, EV - replacement)
      *   - byePolicy: {maxSameByeStarters, basePenalty, scaleByRound, totalRounds}
      *   - topK: number | null  (if null => dynamic)
      *   - sigmaByPos: Object defaults
@@ -397,12 +414,13 @@
       // Base replacement lines on dynamic scarcity when available
       const rep = replacementLevelsAdvanced(remaining, nTeams, { initialByPos });
   
-      // Compute current VOR with roster fit, risk, and bye penalties
+      // Compute current VOR with roster fit, bye penalties, and stacks vs current roster
       const withVOR = remaining.map(p => {
-        const adjEV = p.EV - riskPenalty(p, roundNumber, opts) - byePenaltyFor(p, rs, roundNumber, opts);
+        const adjEV = p.EV - riskPenalty(p, opts, rep[p.pos]) - byePenaltyFor(p, rs, roundNumber, opts);
         const vor = adjEV - (rep[p.pos] || 0);
         const w = rosterFitWeight(p.pos, rs, { scoring });
-        return { ...p, VOR_adj: vor * w, VOR_now: vor * w };
+        const synNow = rosterSynergy(p, rs.rosterPlayers, { stackWeights });
+        return { ...p, VOR_adj: vor * w + synNow, VOR_now: vor * w + synNow };
       });
   
       // Sort by immediate contribution
@@ -424,9 +442,10 @@
   
       // Score each candidate with look-ahead
       const scored = cand.map(A => {
-        // Clone roster and apply A
+        // Clone roster and apply A (including bye/team for next-pick bye and stacks)
         const rs2 = JSON.parse(JSON.stringify(rs));
         applyPick(rs2, A.pos);
+        rs2.rosterPlayers = [...(rs2.rosterPlayers || []), { pos: A.pos, bye: A.bye, team: A.team }];
   
         // Remaining candidates after A, with K/DST gating applied to NEXT pick if requested
         let remaining2 = remaining.filter(x => !(x.name === A.name && x.pos === A.pos));
@@ -439,15 +458,22 @@
   
         // Compute VOR at next pick for each potential B
         const c2 = remaining2.map(p => {
-          const adjEV = p.EV - riskPenalty(p, nextRoundNumber, opts) - byePenaltyFor(p, rs2, nextRoundNumber, opts);
+          const adjEV = p.EV - riskPenalty(p, opts, rep2[p.pos]) - byePenaltyFor(p, rs2, nextRoundNumber, opts);
           const vor = adjEV - (rep2[p.pos] || 0);
           const w = rosterFitWeight(p.pos, rs2, { scoring });
           const VOR_next = vor * w;
           return { ...p, VOR_next };
         }).sort((a,b)=> b.VOR_next - a.VOR_next);
   
-        // Survival model per B
-        const baseSigmaFor = (pos, b) => (isNum(b.adpStd) ? b.adpStd : (sigmaByPos && Number.isFinite(sigmaByPos[pos]) ? sigmaByPos[pos] : 8.0));
+        // Survival model per B. Floor adpStd so unanimous ADP (0) does not divide by zero.
+        const baseSigmaFor = (pos, b) => {
+          if (isNum(b.adpStd)) return Math.max(b.adpStd, 1.0);
+          return (sigmaByPos && Number.isFinite(sigmaByPos[pos]) ? sigmaByPos[pos] : 8.0);
+        };
+  
+        // Taking A shifts remaining demand onto the next names at that position
+        const demandAfterA = { ...expectedDemand };
+        demandAfterA[A.pos] = (demandAfterA[A.pos] || 0) + 1;
   
         // Demand-aware adjustment: compute positional rank & adjust survival with expected demand
         const rankMaps = { QB:new Map(), RB:new Map(), WR:new Map(), TE:new Map(), DST:new Map(), K:new Map() };
@@ -459,7 +485,7 @@
           const sigma = baseSigmaFor(B.pos, B);
           let survive = survivalProbADP(B.ADP, nextOverall, sigma);
           const posRank = rankMaps[B.pos].get(B.name) || 9999;
-          const expTakenPos = expectedDemand[B.pos] || 0;
+          const expTakenPos = demandAfterA[B.pos] || 0;
           survive = adjustSurvivalWithDemand(B, survive, posRank, expTakenPos);
           return { ...B, survive };
         });
@@ -495,6 +521,7 @@
     function normalizeRosterState(rs) {
       const r = JSON.parse(JSON.stringify(rs || makeEmptyRosterState()));
       const S = STARTERS;
+      if (!Array.isArray(r.rosterPlayers)) r.rosterPlayers = [];
       for (const p of ["QB","RB","WR","TE","DST","K"]) {
         r.have[p] = r.have[p] || 0;
         r.startersFilled[p] = Math.min(r.startersFilled?.[p] || 0, S[p] || 0);
@@ -517,6 +544,7 @@
       MAX_POS,
       FLEX_ELIGIBLE,
       STREAM_FUDGE,
+      RISK_ALPHA,
       makeEmptyRosterState,
       canDraftPos,
       applyPick,

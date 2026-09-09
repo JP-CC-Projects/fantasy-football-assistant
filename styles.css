@@ -318,6 +318,21 @@ main.grid-shell {
     color: #6c757d;
 }
 
+.player-metrics {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.player-risk {
+    background: #f3e0c7;
+    color: #8a4b12;
+    padding: 2px 7px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
 .player-ev {
     background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
